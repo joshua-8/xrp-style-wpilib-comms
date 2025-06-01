@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.json": "jsonc",
+        "xrp-datatypes": "cpp"
+    },
+    "cSpell.words": [
+        "pico",
+        "XSWC"
+    ]
+}
