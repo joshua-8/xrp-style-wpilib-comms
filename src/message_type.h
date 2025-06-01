@@ -20,3 +20,4 @@ struct tag_type {
 };
 
 #define TYPE_TO_TAG_VAL(type) (tag_type<type>::value)
+

@@ -74,7 +74,7 @@ public:
         return 6; // 1 byte for tag, 1 for id, 4 for value
     }
 
-    // default destructor is fine
+    // default destructor is fine 
 
 protected:
     xrp_analog_t data;

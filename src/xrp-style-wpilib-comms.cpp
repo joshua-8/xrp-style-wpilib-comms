@@ -175,4 +175,4 @@ bool XSWC::isEnabled()
     return cmdEnable;
 }
 
-XSWC xswc; // make global instance
+XSWC xswc; // make a global instance

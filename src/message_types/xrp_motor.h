@@ -67,7 +67,7 @@ public:
         return 6; // 1 byte for tag, 1 byte for id, 4 bytes for value
     }
 
-    // the default destructor is fine
+    // the default destructor is fine 
 
 protected:
     xrp_motor_t data;

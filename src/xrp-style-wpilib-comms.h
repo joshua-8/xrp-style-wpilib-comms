@@ -139,4 +139,4 @@ protected:
 
 }; // end class XSWC
 
-extern XSWC xswc; // a global instance will be created
+extern XSWC xswc; // a global instance is created in the .cpp file
