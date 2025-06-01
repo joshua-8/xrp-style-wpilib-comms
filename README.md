@@ -14,4 +14,3 @@ This library uses the standard Arduino WiFi and UDP library.
 * ESP32 devboard (Alfredo Systems NoU2) - untested
 * ESP32-S3 QT Py (RCM BYTE and RCM Nibble) - untested
 * Alfredo Systems NoU3 - untested
-

@@ -176,3 +176,4 @@ bool XSWC::isEnabled()
 }
 
 XSWC xswc; // make a global instance
+

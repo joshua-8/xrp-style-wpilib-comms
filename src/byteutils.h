@@ -55,3 +55,4 @@ void int32ToNetwork(int32_t num, char* buf, int offset = 0);
 void uint32ToNetwork(uint32_t num, char* buf, int offset = 0);
 
 #endif // BYTEUTILS_H
+

@@ -79,3 +79,4 @@ public:
 protected:
     xrp_analog_t data;
 };
+

@@ -86,3 +86,4 @@ void uint32ToNetwork(uint32_t num, char* buf, int offset) {
   buf[offset+2] = b[1];
   buf[offset+3] = b[0];
 }
+
