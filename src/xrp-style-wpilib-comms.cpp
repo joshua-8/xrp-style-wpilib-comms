@@ -26,12 +26,12 @@ bool XSWC::getData(T& data, const uint8_t id)
 
 // save data into list of messages to send
 template <typename T>
-bool XSWC::sendData(T data, const uint8_t id)
+bool XSWC::sendData(T data)
 {
     MessageType* message = nullptr;
     // search sent messages for a message with tag and id as assign
     for (MessageType* msg : sentMessages) {
-        if (msg->getTag() == TYPE_TO_TAG_VAL(T) && (msg->hasId() == false || msg->getId() == id)) {
+        if (msg->getTag() == TYPE_TO_TAG_VAL(T) && (msg->hasId() == false || msg->getId() == data.id)) {
             // Found a message of the correct type and with the correct ID
             // we'll overwrite it
             message = msg;
@@ -132,6 +132,7 @@ bool XSWC::begin(const char* ssid, const char* password, uint16_t port)
 
 bool XSWC::update()
 {
+    bool gotPacket = false;
     int packetSize = udp.parsePacket();
     if (packetSize) {
         millisWhenLastMessageReceived = millis();
@@ -143,15 +144,15 @@ bool XSWC::update()
         receivedMessages.clear();
         processReceivedBufferIntoMessages(rxBuf, receivedPacketSize);
         // TODO: CALL gotDataCallback()
+        gotPacket = true;
     }
 
     if (true) { // TODO: PERIODIC
         // TODO: CALL sendDataCallback()
         int txSize = processMessagesIntoBufferToSend(txBuf, UDP_PACKET_MAX_SIZE_XRP);
-        // TODO: SEND UDP PACKET
-        if (true) { // TODO: IF CONNECTED
+        if (true) { // TODO: IF CONNECTED (has remote address)
             udp.beginPacket(); // udpRemoteAddr.toString().c_str(), udpRemotePort);
-            udp.write((byte*)txBuf, txSize); // TODO: WHAT TYPE?
+            udp.write((byte*)txBuf, txSize); // TODO: WHAT TYPE? byte or char?
             udp.endPacket();
             txSeq++;
         }
@@ -161,13 +162,12 @@ bool XSWC::update()
         sentMessages.clear();
     }
 
-    return true;
+    return gotPacket;
 }
 
 bool XSWC::isConnected()
 {
-    return true;
-    // TODO
+    return millis() - millisWhenLastMessageReceived < TIMEOUT_MS;
 }
 
 bool XSWC::isEnabled()
@@ -176,4 +176,3 @@ bool XSWC::isEnabled()
 }
 
 XSWC xswc; // make a global instance
-

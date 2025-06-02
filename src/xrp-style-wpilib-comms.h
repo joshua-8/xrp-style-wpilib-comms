@@ -17,7 +17,6 @@
 #include "message_type.h"
 
 #define UDP_PACKET_MAX_SIZE_XRP 1000 // I think the rpi pico xrp firmware uses 8192, but that's absurdly large
-#define TIMEOUT_MS 1000 // TODO: make this easier to change
 
 class XSWC {
 protected:
@@ -90,13 +89,13 @@ public:
     }
 
     // methods to send data (add methods when you add new message types)
-    bool sendData_xrp_dio(const xrp_dio_t& data, const uint8_t id)
+    bool sendData_xrp_dio(const xrp_dio_t& data)
     {
-        return sendData<xrp_dio_t>(data, id);
+        return sendData<xrp_dio_t>(data);
     }
-    bool sendData_xrp_analog(const xrp_analog_t& data, const uint8_t id)
+    bool sendData_xrp_analog(const xrp_analog_t& data)
     {
-        return sendData<xrp_analog_t>(data, id);
+        return sendData<xrp_analog_t>(data);
     }
 
     /**
@@ -114,12 +113,14 @@ public:
     bool isConnected();
     bool isEnabled();
 
+    unsigned long TIMEOUT_MS = 1000;
+
 protected:
     template <typename T>
     bool getData(T& data, const uint8_t id = 255);
 
     template <typename T>
-    bool sendData(const T data, const uint8_t id = 255);
+    bool sendData(const T data);
 
     boolean processReceivedBufferIntoMessages(char* buffer, int length);
     int processMessagesIntoBufferToSend(char* buffer, int length);
@@ -140,4 +141,3 @@ protected:
 }; // end class XSWC
 
 extern XSWC xswc; // a global instance is created in the .cpp file
-

@@ -17,5 +17,5 @@ jobs:
         with:
           compliance: strict
           project-type: all
-          library-manager: submit
+          library-manager: update
           recursive: true
