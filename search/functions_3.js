@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getdata_0',['getData',['../class_message_type.html#a8515447d5ff9a203199d38d4d9c62584',1,'MessageType::getData()'],['../class_xrp_analog.html#af0a6dda8e82a5bae46bca2a9a903f88d',1,'XrpAnalog::getData()'],['../class_xrp_dio.html#a3e0bf8b464216db35a0696abc32f3afd',1,'XrpDio::getData()'],['../class_xrp_motor.html#a3057e3ab3d1079a38c9604844d7f5583',1,'XrpMotor::getData()'],['../class_xrp_servo.html#a6a00792cdf4509eea991363a291f32e8',1,'XrpServo::getData()'],['../class_x_s_w_c.html#a385a1ca9c0f55822cb913321da19bf47',1,'XSWC::getData(T &amp;data, const uint8_t id=255)']]],
+  ['getdata_0',['getData',['../class_message_type.html#a8515447d5ff9a203199d38d4d9c62584',1,'MessageType::getData()'],['../class_xrp_analog.html#af0a6dda8e82a5bae46bca2a9a903f88d',1,'XrpAnalog::getData()'],['../class_xrp_dio.html#a3e0bf8b464216db35a0696abc32f3afd',1,'XrpDio::getData()'],['../class_xrp_motor.html#a3057e3ab3d1079a38c9604844d7f5583',1,'XrpMotor::getData()'],['../class_xrp_servo.html#a6a00792cdf4509eea991363a291f32e8',1,'XrpServo::getData()'],['../class_x_s_w_c.html#a1d26059d1a9f1746104b8c8eeaf51f92',1,'XSWC::getData(T &amp;data, const uint8_t id)']]],
   ['getdata_5fxrp_5fanalog_1',['getData_xrp_analog',['../class_x_s_w_c.html#a7fcc2ab757800ce24ad9e79ac84386f5',1,'XSWC']]],
   ['getdata_5fxrp_5fdio_2',['getData_xrp_dio',['../class_x_s_w_c.html#a8d3e3832b6b6ed6c5fde6d835bac5056',1,'XSWC']]],
   ['getdata_5fxrp_5fmotor_3',['getData_xrp_motor',['../class_x_s_w_c.html#a7e13431ebe885fa026a30fe825f3f65f',1,'XSWC']]],

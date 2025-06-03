@@ -103,19 +103,20 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_message_type.html#aa2455f2060f0ac8990a4677c4a4779b8">    9</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_message_type.html#aa2455f2060f0ac8990a4677c4a4779b8">setData</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* data) = 0;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_message_type.html#a4f7a053ce5b18b75d770da3c41e935f1">   10</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_message_type.html#a4f7a053ce5b18b75d770da3c41e935f1">toNetworkBuffer</a>(<span class="keywordtype">char</span>* buffer, <span class="keywordtype">int</span> pos, <span class="keywordtype">int</span> end) = 0;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_message_type.html#a6f422fbb22d8454acfd79d4b9425f1cb">   11</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_message_type.html#a6f422fbb22d8454acfd79d4b9425f1cb">fromNetworkBuffer</a>(<span class="keywordtype">char</span>* buf, <span class="keywordtype">int</span> pos, <span class="keywordtype">int</span> end) = 0;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_message_type.html#ac2bb28c7207f397f632c8201c37ea0c8">   12</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_message_type.html#ac2bb28c7207f397f632c8201c37ea0c8">~MessageType</a>() { }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
 </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structtag__type.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtag__type.html">tag_type</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structtag__type.html#a2deeebd56db407f3d5e94d76d8dd8895">   18</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> uint8_t <a class="code hl_variable" href="structtag__type.html#a2deeebd56db407f3d5e94d76d8dd8895">value</a> = 0; <span class="comment">// Default value, should be specialized for each type</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structtag__type.html">   18</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtag__type.html">tag_type</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structtag__type.html#a2deeebd56db407f3d5e94d76d8dd8895">   19</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> uint8_t <a class="code hl_variable" href="structtag__type.html#a2deeebd56db407f3d5e94d76d8dd8895">value</a> = 0; <span class="comment">// Default value, should be specialized for each type</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
 </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define TYPE_TO_TAG_VAL(type) (tag_type&lt;type&gt;::value)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define TYPE_TO_TAG_VAL(type) (tag_type&lt;type&gt;::value)</span></div>
 <div class="ttc" id="aclass_message_type_html"><div class="ttname"><a href="class_message_type.html">MessageType</a></div><div class="ttdef"><b>Definition</b> message_type.h:3</div></div>
 <div class="ttc" id="aclass_message_type_html_a4f7a053ce5b18b75d770da3c41e935f1"><div class="ttname"><a href="class_message_type.html#a4f7a053ce5b18b75d770da3c41e935f1">MessageType::toNetworkBuffer</a></div><div class="ttdeci">virtual int toNetworkBuffer(char *buffer, int pos, int end)=0</div></div>
 <div class="ttc" id="aclass_message_type_html_a52e93614605a07141d369ea2f7af3522"><div class="ttname"><a href="class_message_type.html#a52e93614605a07141d369ea2f7af3522">MessageType::getId</a></div><div class="ttdeci">virtual uint8_t getId()=0</div></div>
@@ -123,9 +124,10 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclass_message_type_html_a8515447d5ff9a203199d38d4d9c62584"><div class="ttname"><a href="class_message_type.html#a8515447d5ff9a203199d38d4d9c62584">MessageType::getData</a></div><div class="ttdeci">virtual void * getData()=0</div></div>
 <div class="ttc" id="aclass_message_type_html_a8a48fae84f490d9526ff367e37408f18"><div class="ttname"><a href="class_message_type.html#a8a48fae84f490d9526ff367e37408f18">MessageType::getTag</a></div><div class="ttdeci">virtual int getTag()=0</div></div>
 <div class="ttc" id="aclass_message_type_html_aa2455f2060f0ac8990a4677c4a4779b8"><div class="ttname"><a href="class_message_type.html#aa2455f2060f0ac8990a4677c4a4779b8">MessageType::setData</a></div><div class="ttdeci">virtual void setData(const void *data)=0</div></div>
+<div class="ttc" id="aclass_message_type_html_ac2bb28c7207f397f632c8201c37ea0c8"><div class="ttname"><a href="class_message_type.html#ac2bb28c7207f397f632c8201c37ea0c8">MessageType::~MessageType</a></div><div class="ttdeci">virtual ~MessageType()</div><div class="ttdef"><b>Definition</b> message_type.h:12</div></div>
 <div class="ttc" id="aclass_message_type_html_adfeb917add2a70503e716b91208e8430"><div class="ttname"><a href="class_message_type.html#adfeb917add2a70503e716b91208e8430">MessageType::hasId</a></div><div class="ttdeci">virtual bool hasId()=0</div></div>
-<div class="ttc" id="astructtag__type_html"><div class="ttname"><a href="structtag__type.html">tag_type</a></div><div class="ttdef"><b>Definition</b> message_type.h:17</div></div>
-<div class="ttc" id="astructtag__type_html_a2deeebd56db407f3d5e94d76d8dd8895"><div class="ttname"><a href="structtag__type.html#a2deeebd56db407f3d5e94d76d8dd8895">tag_type::value</a></div><div class="ttdeci">static constexpr uint8_t value</div><div class="ttdef"><b>Definition</b> message_type.h:18</div></div>
+<div class="ttc" id="astructtag__type_html"><div class="ttname"><a href="structtag__type.html">tag_type</a></div><div class="ttdef"><b>Definition</b> message_type.h:18</div></div>
+<div class="ttc" id="astructtag__type_html_a2deeebd56db407f3d5e94d76d8dd8895"><div class="ttname"><a href="structtag__type.html#a2deeebd56db407f3d5e94d76d8dd8895">tag_type::value</a></div><div class="ttdeci">static constexpr uint8_t value</div><div class="ttdef"><b>Definition</b> message_type.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

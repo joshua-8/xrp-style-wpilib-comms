@@ -169,12 +169,12 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a385a1ca9c0f55822cb913321da19bf47" id="r_a385a1ca9c0f55822cb913321da19bf47"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a385a1ca9c0f55822cb913321da19bf47"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a385a1ca9c0f55822cb913321da19bf47">getData</a> (T &amp;data, const uint8_t id=255)</td></tr>
-<tr class="separator:a385a1ca9c0f55822cb913321da19bf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a179f3756501e545acde4e92a85b02e5c" id="r_a179f3756501e545acde4e92a85b02e5c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a179f3756501e545acde4e92a85b02e5c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a179f3756501e545acde4e92a85b02e5c">sendData</a> (const T data, bool checkUniqueness=false)</td></tr>
-<tr class="separator:a179f3756501e545acde4e92a85b02e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d26059d1a9f1746104b8c8eeaf51f92" id="r_a1d26059d1a9f1746104b8c8eeaf51f92"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a1d26059d1a9f1746104b8c8eeaf51f92"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1d26059d1a9f1746104b8c8eeaf51f92">getData</a> (T &amp;data, const uint8_t id)</td></tr>
+<tr class="separator:a1d26059d1a9f1746104b8c8eeaf51f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8eb84701a53ed70c9ff2d32d54e8e73" id="r_ae8eb84701a53ed70c9ff2d32d54e8e73"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae8eb84701a53ed70c9ff2d32d54e8e73"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae8eb84701a53ed70c9ff2d32d54e8e73">sendData</a> (T data, bool checkUniqueness)</td></tr>
+<tr class="separator:ae8eb84701a53ed70c9ff2d32d54e8e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a070183b943d8b367ebcb268d57ba3db1" id="r_a070183b943d8b367ebcb268d57ba3db1"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a070183b943d8b367ebcb268d57ba3db1">processReceivedBufferIntoMessages</a> (char *buffer, int length)</td></tr>
 <tr class="separator:a070183b943d8b367ebcb268d57ba3db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ccc9af88d3f95e5a694245f4cafbac4" id="r_a1ccc9af88d3f95e5a694245f4cafbac4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ccc9af88d3f95e5a694245f4cafbac4">processMessagesIntoBufferToSend</a> (char *buffer, int length)</td></tr>
@@ -338,8 +338,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a385a1ca9c0f55822cb913321da19bf47" name="a385a1ca9c0f55822cb913321da19bf47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a385a1ca9c0f55822cb913321da19bf47">&#9670;&#160;</a></span>getData()</h2>
+<a id="a1d26059d1a9f1746104b8c8eeaf51f92" name="a1d26059d1a9f1746104b8c8eeaf51f92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d26059d1a9f1746104b8c8eeaf51f92">&#9670;&#160;</a></span>getData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -357,12 +357,12 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t</td>          <td class="paramname"><span class="paramname"><em>id</em></span><span class="paramdefsep"> = </span><span class="paramdefval">255</span>&#160;)</td>
+          <td class="paramtype">const uint8_t</td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -814,8 +814,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a179f3756501e545acde4e92a85b02e5c" name="a179f3756501e545acde4e92a85b02e5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a179f3756501e545acde4e92a85b02e5c">&#9670;&#160;</a></span>sendData()</h2>
+<a id="ae8eb84701a53ed70c9ff2d32d54e8e73" name="ae8eb84701a53ed70c9ff2d32d54e8e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8eb84701a53ed70c9ff2d32d54e8e73">&#9670;&#160;</a></span>sendData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -828,17 +828,17 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">bool XSWC::sendData </td>
           <td>(</td>
-          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkUniqueness</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkUniqueness</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

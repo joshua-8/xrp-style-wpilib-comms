@@ -1,7 +1,7 @@
 var searchData=
 [
   ['sendcallback_0',['sendCallback',['../class_x_s_w_c.html#a277d072e7f76b0365b16fa35002c5de3',1,'XSWC']]],
-  ['senddata_1',['sendData',['../class_x_s_w_c.html#a179f3756501e545acde4e92a85b02e5c',1,'XSWC']]],
+  ['senddata_1',['sendData',['../class_x_s_w_c.html#ae8eb84701a53ed70c9ff2d32d54e8e73',1,'XSWC']]],
   ['senddata_5fxrp_5fanalog_2',['sendData_xrp_analog',['../class_x_s_w_c.html#af53d40f25508a969caf3f1819a28f002',1,'XSWC']]],
   ['senddata_5fxrp_5fdio_3',['sendData_xrp_dio',['../class_x_s_w_c.html#ae09550f5af185d5f4bf9b7efed787f08',1,'XSWC']]],
   ['sentmessages_4',['sentMessages',['../class_x_s_w_c.html#ae5a381ba1efafab6b6384c0734daf936',1,'XSWC']]],
