@@ -4,9 +4,11 @@
 
 # work in progress
 
-This library is not officially associated with XRP or wpilib, but it builds on their excellent work.
+This library is not officially associated with XRP or wpilib, but it builds on their excellent work of connecting XRP control boards to wpilib.
 
 The goal is for this library to be compatible with the protocol meant for XRP robots running the [xrp-wpilib-firmware](https://github.com/wpilibsuite/xrp-wpilib-firmware). 
+
+After adding this library to Arduino and uploading an example, the normal XRP with wpilib guide should work https://docs.wpilib.org/en/latest/docs/xrp-robot/programming-xrp.html
 
 This library uses the standard Arduino WiFi and UDP library.
 
