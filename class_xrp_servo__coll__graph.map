@@ -1,0 +1,7 @@
+<map id="XrpServo" name="XrpServo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="79,94,154,120"/>
+<area shape="rect" id="Node000002" href="$class_message_type.html" title=" " alt="" coords="5,5,108,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,42,110,92,106,95,71,45"/>
+<area shape="rect" id="Node000003" href="$structxrp__servo__t.html" title=" " alt="" coords="132,5,221,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,45,127,95,123,92,157,42"/>
+</map>
