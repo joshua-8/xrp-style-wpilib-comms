@@ -161,14 +161,13 @@ public:
      * @param  checkUniqueness: if true, it checks if a message with the same ID already exists in the sent messages, default false
      * @retval (bool) true if data was queued successfully, false otherwise
      */
-    bool sendData_xrp_analog(const xrp_analog_t& data)
+    bool sendData_xrp_analog(const xrp_analog_t& data, bool checkUniqueness = false)
     {
-        return sendData<xrp_analog_t>(data);
+        return sendData<xrp_analog_t>(data, checkUniqueness);
     }
 
     /**
-     * @brief
-     * @retval constructor
+     * @brief constructor of XSWC class, use the global xswc instance to access this class
      */
     XSWC();
 
