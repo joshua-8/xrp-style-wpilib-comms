@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['sendcallback_0',['sendCallback',['../class_x_s_w_c.html#a277d072e7f76b0365b16fa35002c5de3',1,'XSWC']]],
-  ['senddata_1',['sendData',['../class_x_s_w_c.html#a179f3756501e545acde4e92a85b02e5c',1,'XSWC']]],
-  ['senddata_5fxrp_5fanalog_2',['sendData_xrp_analog',['../class_x_s_w_c.html#af53d40f25508a969caf3f1819a28f002',1,'XSWC']]],
-  ['senddata_5fxrp_5fdio_3',['sendData_xrp_dio',['../class_x_s_w_c.html#ae09550f5af185d5f4bf9b7efed787f08',1,'XSWC']]],
-  ['sentmessages_4',['sentMessages',['../class_x_s_w_c.html#ae5a381ba1efafab6b6384c0734daf936',1,'XSWC']]],
-  ['setdata_5',['setData',['../class_message_type.html#aa2455f2060f0ac8990a4677c4a4779b8',1,'MessageType::setData()'],['../class_xrp_analog.html#ac21cb65ce329f10a2a009b50c1fba4b4',1,'XrpAnalog::setData()'],['../class_xrp_dio.html#ae3d5e72444f9233a8a8bf75acd080b8d',1,'XrpDio::setData()'],['../class_xrp_motor.html#a6e35db34af36735c83a66d0457e845d0',1,'XrpMotor::setData()'],['../class_xrp_servo.html#a37a4c8cf01bb8771cdb9c0cea2a66163',1,'XrpServo::setData()']]],
-  ['style_20wpilib_20comms_6',['xrp-style-wpilib-comms',['../index.html',1,'']]]
+  ['networktofloat_0',['networkToFloat',['../byteutils_8cpp.html#a0ca0d92443a750ed815bf12a3a7ed549',1,'networkToFloat(char *buf, int offset):&#160;byteutils.cpp'],['../byteutils_8h.html#a6b7b5899d90a598d7171033c1ce38ae4',1,'networkToFloat(char *buf, int offset=0):&#160;byteutils.cpp']]],
+  ['networktoint16_1',['networkToInt16',['../byteutils_8cpp.html#ad56f7a2c0c487a10e8bd2f9dfed43cbd',1,'networkToInt16(char *buf, int offset):&#160;byteutils.cpp'],['../byteutils_8h.html#ae61550dac384407b752c9545ee7fc5f2',1,'networkToInt16(char *buf, int offset=0):&#160;byteutils.cpp']]],
+  ['networktoint32_2',['networkToInt32',['../byteutils_8cpp.html#ad1c6fbffdb5518d545bf9571be1eb9b7',1,'networkToInt32(char *buf, int offset):&#160;byteutils.cpp'],['../byteutils_8h.html#a28e4df6133ec5c1be7a96da2e91f9a6a',1,'networkToInt32(char *buf, int offset=0):&#160;byteutils.cpp']]],
+  ['networktouint16_3',['networkToUInt16',['../byteutils_8cpp.html#a4264ad808e58e862f98d1d832dbb1180',1,'networkToUInt16(char *buf, int offset):&#160;byteutils.cpp'],['../byteutils_8h.html#aeed90f1997af69ad228719ea9fc28cc0',1,'networkToUInt16(char *buf, int offset=0):&#160;byteutils.cpp']]],
+  ['networktouint32_4',['networkToUInt32',['../byteutils_8cpp.html#a0126dfbde5be8920a58a9476e359d848',1,'networkToUInt32(char *buf, int offset):&#160;byteutils.cpp'],['../byteutils_8h.html#abc173eecc13627b0c1e21c39cb8dd47d',1,'networkToUInt32(char *buf, int offset=0):&#160;byteutils.cpp']]]
 ];

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['data_0',['data',['../class_xrp_analog.html#a2161d8825df97d5a26235820acce31cd',1,'XrpAnalog::data'],['../class_xrp_dio.html#a07d1ec5ec6abd08b38bc2e0f0f3c3d95',1,'XrpDio::data'],['../class_xrp_motor.html#a23647e230575f081e9e76564e766f5e0',1,'XrpMotor::data'],['../class_xrp_servo.html#a3d38b6e62c160b5a5b96ed5dffb66e11',1,'XrpServo::data']]]
+  ['begin_0',['begin',['../class_x_s_w_c.html#a7f723f9980d830b24581377fc240a7a1',1,'XSWC::begin(void(*_receiveCallback)(void), void(*_sendCallback)(void), uint16_t port=3540)'],['../class_x_s_w_c.html#ab420036e7d88cee164c4ab0b98c83ec7',1,'XSWC::begin(const char *ssid, const char *password, void(*_receiveCallback)(void), void(*_sendCallback)(void), const char *hostname=&quot;XRP-XSWC&quot;, uint16_t port=3540)']]],
+  ['byteutils_2ecpp_1',['byteutils.cpp',['../byteutils_8cpp.html',1,'']]],
+  ['byteutils_2eh_2',['byteutils.h',['../byteutils_8h.html',1,'']]]
 ];

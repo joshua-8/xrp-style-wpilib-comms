@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['message_5ftype_2eh_0',['message_type.h',['../message__type_8h.html',1,'']]],
-  ['messagetype_1',['MessageType',['../class_message_type.html',1,'']]],
-  ['messagetypefactory_2',['MessageTypeFactory',['../class_x_s_w_c_1_1_message_type_factory.html',1,'XSWC']]],
-  ['milliswhenlastmessagereceived_3',['millisWhenLastMessageReceived',['../class_x_s_w_c.html#a5231f5ee32fe838c57a9a1cb44e456cc',1,'XSWC']]],
-  ['milliswhenlastsent_4',['millisWhenLastSent',['../class_x_s_w_c.html#a6a9659f7d640e2ada41a91189148822d',1,'XSWC']]],
-  ['min_5fupdate_5ftime_5fms_5',['MIN_UPDATE_TIME_MS',['../class_x_s_w_c.html#a8e0131fe33aed93e685e6c072e136714',1,'XSWC']]]
+  ['id_0',['id',['../structxrp__analog__t.html#ae9f234eb483ece20bdb0778dd0c5429f',1,'xrp_analog_t::id'],['../structxrp__dio__t.html#a8fb849e2cd9eb37074ade161a1501e86',1,'xrp_dio_t::id'],['../structxrp__motor__t.html#a1ce495b6152acdddbbe03f8a716d1f22',1,'xrp_motor_t::id'],['../structxrp__servo__t.html#a2eb2cf692b43bdf1f2961ec97e5a750b',1,'xrp_servo_t::id']]],
+  ['in_20progress_1',['work in progress',['../index.html#autotoc_md1',1,'']]],
+  ['int16tonetwork_2',['int16ToNetwork',['../byteutils_8cpp.html#ac244a3f9484546fdf6be6580898863dc',1,'int16ToNetwork(int16_t num, char *buf, int offset):&#160;byteutils.cpp'],['../byteutils_8h.html#a0164a74ddf850849ea8d7eff075b6f32',1,'int16ToNetwork(int16_t num, char *buf, int offset=0):&#160;byteutils.cpp']]],
+  ['int32tonetwork_3',['int32ToNetwork',['../byteutils_8cpp.html#afe40cb2f861d97f0a6abc077826b49b4',1,'int32ToNetwork(int32_t num, char *buf, int offset):&#160;byteutils.cpp'],['../byteutils_8h.html#a0f3d5343571fdab5b2878875da994553',1,'int32ToNetwork(int32_t num, char *buf, int offset=0):&#160;byteutils.cpp']]],
+  ['io_20xrp_20style_20wpilib_20comms_20class_5fx_5fs_5fw_5fc_20html_20here_20a_4',['documentation for this library &lt;a href=&quot;https://joshua-8.github.io/xrp-style-wpilib-comms/class_x_s_w_c.html&quot; &gt;HERE&lt;/a&gt;',['../index.html#autotoc_md2',1,'']]],
+  ['isconnected_5',['isConnected',['../class_x_s_w_c.html#a0f82eb52a7f6319ba9443fea865a6476',1,'XSWC']]],
+  ['isconnectedandenabled_6',['isConnectedAndEnabled',['../class_x_s_w_c.html#a4787afd1df0868ceefc7ec81e54c9935',1,'XSWC']]],
+  ['isenabled_7',['isEnabled',['../class_x_s_w_c.html#a99d3290c113db3ea7de9440012106db5',1,'XSWC']]]
 ];

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['receivecallback_1',['receiveCallback',['../class_x_s_w_c.html#a377de969795a32f7563429f37704285b',1,'XSWC']]],
-  ['receivedmessages_2',['receivedMessages',['../class_x_s_w_c.html#ad3c1987108c5808e59ee376ed0874245',1,'XSWC']]],
-  ['rxbuf_3',['rxBuf',['../class_x_s_w_c.html#aa4b3f0dbee3eb3d64674071a6a51e424',1,'XSWC']]]
+  ['message_5ftype_2eh_0',['message_type.h',['../message__type_8h.html',1,'']]],
+  ['messagetype_1',['MessageType',['../class_message_type.html',1,'']]],
+  ['messagetypefactory_2',['MessageTypeFactory',['../class_x_s_w_c_1_1_message_type_factory.html',1,'XSWC']]],
+  ['milliswhenlastmessagereceived_3',['millisWhenLastMessageReceived',['../class_x_s_w_c.html#a5231f5ee32fe838c57a9a1cb44e456cc',1,'XSWC']]],
+  ['milliswhenlastsent_4',['millisWhenLastSent',['../class_x_s_w_c.html#a6a9659f7d640e2ada41a91189148822d',1,'XSWC']]],
+  ['min_5fupdate_5ftime_5fms_5',['MIN_UPDATE_TIME_MS',['../class_x_s_w_c.html#a8e0131fe33aed93e685e6c072e136714',1,'XSWC']]]
 ];

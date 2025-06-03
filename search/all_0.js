@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['begin_0',['begin',['../class_x_s_w_c.html#a7f723f9980d830b24581377fc240a7a1',1,'XSWC::begin(void(*_receiveCallback)(void), void(*_sendCallback)(void), uint16_t port=3540)'],['../class_x_s_w_c.html#ab420036e7d88cee164c4ab0b98c83ec7',1,'XSWC::begin(const char *ssid, const char *password, void(*_receiveCallback)(void), void(*_sendCallback)(void), const char *hostname=&quot;XRP-XSWC&quot;, uint16_t port=3540)']]],
-  ['byteutils_2ecpp_1',['byteutils.cpp',['../byteutils_8cpp.html',1,'']]],
-  ['byteutils_2eh_2',['byteutils.h',['../byteutils_8h.html',1,'']]]
+  ['8_20github_20io_20xrp_20style_20wpilib_20comms_20class_5fx_5fs_5fw_5fc_20html_20here_20a_0',['documentation for this library &lt;a href=&quot;https://joshua-8.github.io/xrp-style-wpilib-comms/class_x_s_w_c.html&quot; &gt;HERE&lt;/a&gt;',['../index.html#autotoc_md2',1,'']]]
 ];

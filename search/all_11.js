@@ -1,20 +1,10 @@
 var searchData=
 [
-  ['xrp_20style_20wpilib_20comms_0',['xrp-style-wpilib-comms',['../index.html',1,'']]],
-  ['xrp_2dstyle_2dwpilib_2dcomms_2ecpp_1',['xrp-style-wpilib-comms.cpp',['../xrp-style-wpilib-comms_8cpp.html',1,'']]],
-  ['xrp_2dstyle_2dwpilib_2dcomms_2eh_2',['xrp-style-wpilib-comms.h',['../xrp-style-wpilib-comms_8h.html',1,'']]],
-  ['xrp_5fanalog_2eh_3',['xrp_analog.h',['../xrp__analog_8h.html',1,'']]],
-  ['xrp_5fanalog_5ft_4',['xrp_analog_t',['../structxrp__analog__t.html',1,'']]],
-  ['xrp_5fdio_2eh_5',['xrp_dio.h',['../xrp__dio_8h.html',1,'']]],
-  ['xrp_5fdio_5ft_6',['xrp_dio_t',['../structxrp__dio__t.html',1,'']]],
-  ['xrp_5fmotor_2eh_7',['xrp_motor.h',['../xrp__motor_8h.html',1,'']]],
-  ['xrp_5fmotor_5ft_8',['xrp_motor_t',['../structxrp__motor__t.html',1,'']]],
-  ['xrp_5fservo_2eh_9',['xrp_servo.h',['../xrp__servo_8h.html',1,'']]],
-  ['xrp_5fservo_5ft_10',['xrp_servo_t',['../structxrp__servo__t.html',1,'']]],
-  ['xrpanalog_11',['XrpAnalog',['../class_xrp_analog.html',1,'XrpAnalog'],['../class_xrp_analog.html#ab031b70cca4f2a2579d4486f03b67e2c',1,'XrpAnalog::XrpAnalog()'],['../class_xrp_analog.html#ab2ecea14407af4985e3a57521fa66fdd',1,'XrpAnalog::XrpAnalog(uint8_t id, float value)']]],
-  ['xrpdio_12',['XrpDio',['../class_xrp_dio.html',1,'XrpDio'],['../class_xrp_dio.html#a2e719a4eb20be776badf6d1aab0da318',1,'XrpDio::XrpDio()'],['../class_xrp_dio.html#a1e1d8c6f23a011596ee14e311028b0e6',1,'XrpDio::XrpDio(uint8_t id, uint8_t value)']]],
-  ['xrpmotor_13',['XrpMotor',['../class_xrp_motor.html',1,'XrpMotor'],['../class_xrp_motor.html#accc175fb0dcbd24756765c1b53724065',1,'XrpMotor::XrpMotor()'],['../class_xrp_motor.html#a0fb7da1062b484d8da60bafe6f49e53b',1,'XrpMotor::XrpMotor(uint8_t id, float value)']]],
-  ['xrpservo_14',['XrpServo',['../class_xrp_servo.html',1,'XrpServo'],['../class_xrp_servo.html#a2fac3e55f3cb6ca929f8da00a5f841cb',1,'XrpServo::XrpServo()'],['../class_xrp_servo.html#a15e24f0c2afdd87e17ba123cad84a36c',1,'XrpServo::XrpServo(uint8_t id, float value)']]],
-  ['xswc_15',['XSWC',['../class_x_s_w_c.html',1,'XSWC'],['../class_x_s_w_c.html#a9600dbfcd46fd95e02a857d80d02d12f',1,'XSWC::XSWC()']]],
-  ['xswc_16',['xswc',['../xrp-style-wpilib-comms_8cpp.html#aecd166e8a5aeda780b4bd0a00646af67',1,'xswc:&#160;xrp-style-wpilib-comms.cpp'],['../xrp-style-wpilib-comms_8h.html#aecd166e8a5aeda780b4bd0a00646af67',1,'xswc:&#160;xrp-style-wpilib-comms.cpp']]]
+  ['udp_0',['udp',['../class_x_s_w_c.html#aa6ffaaa5eb2d6dee3fc52ec91d16a38b',1,'XSWC']]],
+  ['udpremoteaddr_1',['udpRemoteAddr',['../class_x_s_w_c.html#a5b0578d05c3bdf9937aba20f70d458c6',1,'XSWC']]],
+  ['udpremoteport_2',['udpRemotePort',['../class_x_s_w_c.html#a69bf5a2765a08116eec947892704d479',1,'XSWC']]],
+  ['uint16tonetwork_3',['uint16ToNetwork',['../byteutils_8cpp.html#afa8b881300ddfe15accfd3660e8302d1',1,'uint16ToNetwork(uint16_t num, char *buf, int offset):&#160;byteutils.cpp'],['../byteutils_8h.html#a162fd5e96f536f4441736b7be0e30b4b',1,'uint16ToNetwork(uint16_t num, char *buf, int offset=0):&#160;byteutils.cpp']]],
+  ['uint32tonetwork_4',['uint32ToNetwork',['../byteutils_8cpp.html#ad6931cd752edddcef1486fe2bc8fd0dc',1,'uint32ToNetwork(uint32_t num, char *buf, int offset):&#160;byteutils.cpp'],['../byteutils_8h.html#aaba0e725fac406f69f4d113e3bf151de',1,'uint32ToNetwork(uint32_t num, char *buf, int offset=0):&#160;byteutils.cpp']]],
+  ['update_5',['update',['../class_x_s_w_c.html#a844bb6cabaa414dd3caf621a433b5849',1,'XSWC']]],
+  ['useap_6',['useAP',['../class_x_s_w_c.html#aa53c8104c78859f2ef4a96a9207f2886',1,'XSWC']]]
 ];
