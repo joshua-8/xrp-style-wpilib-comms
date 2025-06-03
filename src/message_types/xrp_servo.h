@@ -57,7 +57,7 @@ public:
             return 0;
         }
         // buf[pos] is the tag, which should have already been confirmed to be XRP_TAG_MOTOR
-        int channelID = buf[pos + 1];
+        int channelID = (uint8_t)buf[pos + 1];
         float value = networkToFloat(buf, pos + 2);
         data.id = channelID;
         data.value = value;

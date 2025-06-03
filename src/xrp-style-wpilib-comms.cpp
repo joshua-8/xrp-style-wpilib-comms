@@ -10,50 +10,9 @@ XSWC::XSWC()
 {
 }
 
-// recall data from list of received messages
-template <typename T>
-bool XSWC::getData(T& data, const uint8_t id)
-{
-    for (MessageType* msg : receivedMessages) {
-        if (msg->getTag() == TYPE_TO_TAG_VAL(T) && (msg->hasId() == false || msg->getId() == id)) {
-            // Check if we've found a message of the correct type and with the correct ID
-            data = *static_cast<T*>(msg->getData());
-            return true; // Data found
-        }
-    }
-    return false; // No data found
-}
-
-// save data into list of messages to send
-template <typename T>
-bool XSWC::sendData(T data, bool checkUniqueness)
-{
-    MessageType* message = nullptr;
-    if (checkUniqueness) {
-        // search sent messages for a message with tag and id
-        for (MessageType* msg : sentMessages) {
-            if (msg->getTag() == TYPE_TO_TAG_VAL(T) && (msg->hasId() == false || msg->getId() == data.id)) {
-                // Found a message of the correct type and with the correct ID
-                // we'll overwrite it
-                message = msg;
-                break;
-            }
-        }
-    }
-    if (message == nullptr) {
-        // No existing message found, create a new one
-        message = MessageTypeFactory::createMessageType(TYPE_TO_TAG_VAL(T));
-    }
-    if (message != nullptr) {
-        message->setData(&data);
-        sentMessages.push_back(message);
-        return true; // Data successfully added to the list
-    }
-    return false;
-}
+// getData and sendData (adding and recalling from message lists) are in the header file
 
 // https://github.com/wpilibsuite/allwpilib/tree/main/simulation/halsim_xrp
-
 boolean XSWC::processReceivedBufferIntoMessages(char* buffer, int length)
 {
     if (length < 3) { // too short to contain counter and enabled bit
@@ -61,16 +20,17 @@ boolean XSWC::processReceivedBufferIntoMessages(char* buffer, int length)
     }
     int index = 0;
     int sequence = networkToUInt16(buffer, 0); // TODO: USE sequence to toss out of order data
-    cmdEnable = (buffer[2] == 1);
+    cmdEnable = ((uint8_t)buffer[2] == 1);
+    //TODO: WHAT'S ACTUALLY HAPPENING WITH (uint8_t) VS (CHAR)
     index += 3;
     while (index + 2 < length) { // min size of a block is 2
         // process "data blocks" each block is a message
-        int size = buffer[index] + 1; // size value excludes the size byte
+        int size = (uint8_t)buffer[index] + 1; // size value excludes the size byte
         if (size <= 1) {
             return false; // invalid
         }
         index++;
-        uint8_t tag = buffer[index];
+        uint8_t tag = (uint8_t)buffer[index];
         MessageType* msg = MessageTypeFactory::createMessageType(tag);
         if (msg != nullptr) {
             int indexIncrement = msg->fromNetworkBuffer(buffer, index, length);
@@ -102,11 +62,14 @@ bool XSWC::begin(void (*_receiveCallback)(void), void (*_sendCallback)(void), ui
     // Set up UDP
     udp.begin(port);
 
-    Serial.println("[NET] Network Ready");
-    Serial.printf("[NET] SSID: %s\n", WiFi.SSID().c_str());
-    Serial.printf("[NET] IP: %s\n", WiFi.localIP().toString().c_str());
-    Serial.printf("[NET] UDP Port: %d\n", port);
-    Serial.printf("[NET] IP Address: %s\n", WiFi.localIP().toString().c_str());
+    if (useAP) {
+        Serial.println("AP started");
+        Serial.printf("[NET] IP: %s\n", WiFi.softAPIP().toString().c_str());
+    } else {
+        Serial.println("Connected to network");
+        Serial.printf("[NET] SSID: %s\n", WiFi.SSID().c_str());
+        Serial.printf("[NET] IP: %s\n", WiFi.localIP().toString().c_str());
+    }
 
     return true;
 }
@@ -124,6 +87,8 @@ bool XSWC::begin(const char* ssid, const char* password, void (*_receiveCallback
 
     WiFiMulti multi;
 
+    // TODO: DEBUG why I can't connect to a network
+
     if (useAP == false) {
         multi.addAP(ssid, password); // TODO: could be a list, or from a configuration file
 
@@ -135,9 +100,16 @@ bool XSWC::begin(const char* ssid, const char* password, void (*_receiveCallback
     }
 
     if (useAP) {
+        WiFi.disconnect();
+        WiFi.mode(WIFI_AP);
         // TODO: make customizable
-        Serial.println("[NET] creating AP with ssid: XRP-XSWC-AP and password: password");
-        WiFi.softAP("XRP-XSWC-AP", "password");
+        Serial.println("[NET] creating AP with ssid: XRP_XSWC_AP and password: password");
+        WiFi.softAP("XRP_XSWC_AP", "password");
+        while (WiFi.softAPIP() == IPAddress(0, 0, 0, 0)) {
+            Serial.print(".");
+            delay(100); // wait for AP to be ready
+        }
+        Serial.println();
     }
 
     begin(_receiveCallback, _sendCallback, port);
@@ -158,11 +130,6 @@ bool XSWC::update()
 
     if (packetSize) {
         Serial.print("\n\n        GOT PACKET        \n");
-        for (int i = 0; i < packetSize; i++) {
-            Serial.print(udp.read());
-            Serial.print(" ");
-        }
-        Serial.println();
         if (!connectedToRemote) {
             udpRemoteAddr = udp.remoteIP();
             udpRemotePort = udp.remotePort();
@@ -174,6 +141,12 @@ bool XSWC::update()
 
         millisWhenLastMessageReceived = millis();
         int receivedPacketSize = udp.read(rxBuf, UDP_PACKET_MAX_SIZE_XRP);
+        for (int i = 0; i < packetSize; i++) {
+            Serial.print((uint8_t)rxBuf[i]);
+            Serial.print(" ");
+        }
+        Serial.println();
+
         // clear list or received messages before parsing the packet into messages
         for (MessageType* msg : receivedMessages) {
             delete msg;
@@ -190,7 +163,7 @@ bool XSWC::update()
         int txSize = processMessagesIntoBufferToSend(txBuf, UDP_PACKET_MAX_SIZE_XRP);
         if (connectedToRemote) {
             udp.beginPacket(); // udpRemoteAddr.toString().c_str(), udpRemotePort);
-            udp.write((byte*)txBuf, txSize); // TODO: WHAT TYPE? byte or char?
+            udp.write((uint8_t*)txBuf, txSize); // TODO: WHAT TYPE? byte or char?
             udp.endPacket();
             txSeq++;
         }

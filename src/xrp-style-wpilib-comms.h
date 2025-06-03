@@ -13,6 +13,7 @@
 #include <WiFi.h>
 #include <WiFiUdp.h>
 #include <vector>
+#include <cstdint>
 
 #include "message_type.h"
 
@@ -214,11 +215,47 @@ public:
     bool useAP = false;
 
 protected:
+    // recall data from list of received messages
     template <typename T>
-    bool getData(T& data, const uint8_t id = 255);
+    bool getData(T& data, const uint8_t id)
+    {
+        for (MessageType* msg : receivedMessages) {
+            if (msg->getTag() == TYPE_TO_TAG_VAL(T) && (msg->hasId() == false || msg->getId() == id)) {
+                // Check if we've found a message of the correct type and with the correct ID
+                data = *static_cast<T*>(msg->getData());
+                return true; // Data found
+            }
+        }
+        return false; // No data found
+    }
 
+    // save data into list of messages to send
     template <typename T>
-    bool sendData(const T data, bool checkUniqueness = false);
+    bool sendData(T data, bool checkUniqueness)
+    {
+        MessageType* message = nullptr;
+        if (checkUniqueness) {
+            // search sent messages for a message with tag and id
+            for (MessageType* msg : sentMessages) {
+                if (msg->getTag() == TYPE_TO_TAG_VAL(T) && (msg->hasId() == false || msg->getId() == data.id)) {
+                    // Found a message of the correct type and with the correct ID
+                    // we'll overwrite it
+                    message = msg;
+                    break;
+                }
+            }
+        }
+        if (message == nullptr) {
+            // No existing message found, create a new one
+            message = MessageTypeFactory::createMessageType(TYPE_TO_TAG_VAL(T));
+        }
+        if (message != nullptr) {
+            message->setData(&data);
+            sentMessages.push_back(message);
+            return true; // Data successfully added to the list
+        }
+        return false;
+    }
 
     boolean processReceivedBufferIntoMessages(char* buffer, int length);
     int processMessagesIntoBufferToSend(char* buffer, int length);

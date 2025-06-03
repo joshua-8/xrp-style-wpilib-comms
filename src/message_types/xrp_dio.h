@@ -65,8 +65,8 @@ public:
             return 0;
         }
         // buf[pos] is the tag, which should have already been confirmed to be XRP_TAG_DIO
-        data.id = buf[pos + 1];
-        data.value = buf[pos + 2];
+        data.id = (uint8_t)buf[pos + 1];
+        data.value = (uint8_t)buf[pos + 2];
         return 3; // 1 byte for tag, 1 byte for id, 1 byte for value
     }
 

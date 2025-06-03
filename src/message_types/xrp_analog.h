@@ -65,7 +65,7 @@ public:
             return 0;
         }
         // buf[pos] is the tag, which should have already been confirmed to be XRP_TAG_ANALOG
-        data.id = buf[pos + 1];
+        data.id = (uint8_t)buf[pos + 1];
         data.value = networkToFloat(buf, pos + 2);
         return 6; // 1 byte for tag, 1 for id, 4 for value
     }

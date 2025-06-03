@@ -9,6 +9,7 @@ public:
     virtual void setData(const void* data) = 0;
     virtual int toNetworkBuffer(char* buffer, int pos, int end) = 0;
     virtual int fromNetworkBuffer(char* buf, int pos, int end) = 0;
+    virtual ~MessageType() { }
 
 protected:
 };
