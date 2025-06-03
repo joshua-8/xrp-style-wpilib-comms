@@ -135,10 +135,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae09550f5af185d5f4bf9b7efed787f08" id="r_ae09550f5af185d5f4bf9b7efed787f08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae09550f5af185d5f4bf9b7efed787f08">sendData_xrp_dio</a> (const <a class="el" href="structxrp__dio__t.html">xrp_dio_t</a> &amp;data, bool checkUniqueness=false)</td></tr>
 <tr class="memdesc:ae09550f5af185d5f4bf9b7efed787f08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data for a specific motor.  <br /></td></tr>
 <tr class="separator:ae09550f5af185d5f4bf9b7efed787f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad37627a9ef7de6ee97822e6b40542b3" id="r_aad37627a9ef7de6ee97822e6b40542b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad37627a9ef7de6ee97822e6b40542b3">sendData_xrp_analog</a> (const <a class="el" href="structxrp__analog__t.html">xrp_analog_t</a> &amp;data)</td></tr>
-<tr class="memdesc:aad37627a9ef7de6ee97822e6b40542b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data for a specific motor.  <br /></td></tr>
-<tr class="separator:aad37627a9ef7de6ee97822e6b40542b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af53d40f25508a969caf3f1819a28f002" id="r_af53d40f25508a969caf3f1819a28f002"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af53d40f25508a969caf3f1819a28f002">sendData_xrp_analog</a> (const <a class="el" href="structxrp__analog__t.html">xrp_analog_t</a> &amp;data, bool checkUniqueness=false)</td></tr>
+<tr class="memdesc:af53d40f25508a969caf3f1819a28f002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data for a specific motor.  <br /></td></tr>
+<tr class="separator:af53d40f25508a969caf3f1819a28f002"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9600dbfcd46fd95e02a857d80d02d12f" id="r_a9600dbfcd46fd95e02a857d80d02d12f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9600dbfcd46fd95e02a857d80d02d12f">XSWC</a> ()</td></tr>
+<tr class="memdesc:a9600dbfcd46fd95e02a857d80d02d12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor of <a class="el" href="class_x_s_w_c.html" title="top level class for the XRP-style WPILib communications This class handles the UDP communication,...">XSWC</a> class, use the global xswc instance to access this class  <br /></td></tr>
 <tr class="separator:a9600dbfcd46fd95e02a857d80d02d12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f723f9980d830b24581377fc240a7a1" id="r_a7f723f9980d830b24581377fc240a7a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f723f9980d830b24581377fc240a7a1">begin</a> (void(*_receiveCallback)(void), void(*_sendCallback)(void), uint16_t port=3540)</td></tr>
 <tr class="memdesc:a7f723f9980d830b24581377fc240a7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">begin udp communication on given port  <br /></td></tr>
@@ -227,12 +228,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">constructor</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+
+<p>constructor of <a class="el" href="class_x_s_w_c.html" title="top level class for the XRP-style WPILib communications This class handles the UDP communication,...">XSWC</a> class, use the global xswc instance to access this class </p>
 
 </div>
 </div>
@@ -848,8 +845,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="aad37627a9ef7de6ee97822e6b40542b3" name="aad37627a9ef7de6ee97822e6b40542b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad37627a9ef7de6ee97822e6b40542b3">&#9670;&#160;</a></span>sendData_xrp_analog()</h2>
+<a id="af53d40f25508a969caf3f1819a28f002" name="af53d40f25508a969caf3f1819a28f002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af53d40f25508a969caf3f1819a28f002">&#9670;&#160;</a></span>sendData_xrp_analog()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -860,8 +857,12 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">bool XSWC::sendData_xrp_analog </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxrp__analog__t.html">xrp_analog_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="structxrp__analog__t.html">xrp_analog_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkUniqueness</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
         </tr>
       </table>
   </td>
