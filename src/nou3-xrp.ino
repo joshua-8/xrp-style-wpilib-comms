@@ -34,6 +34,18 @@ NoU_Servo servo2(2);
 NoU_Servo servo3(3);
 NoU_Servo servo4(4);
 
+xrp_motor_t motor2_L_data = { .id = 2, .value = 0.0 };
+xrp_motor_t motor3_3_data = { .id = 3, .value = 0.0 };
+xrp_motor_t motor4_4_data = { .id = 4, .value = 0.0 };
+xrp_motor_t motor7_R_data = { .id = 5, .value = 0.0 };
+
+xrp_servo_t servo1_data = { .id = 1, .value = 0.0 };
+xrp_servo_t servo2_data = { .id = 2, .value = 0.0 };
+xrp_servo_t servo3_data = { .id = 3, .value = 0.0 };
+xrp_servo_t servo4_data = { .id = 4, .value = 0.0 };
+
+xrp_analog_t battery_data = { .id = 0, .value = 0.0 };
+
 void setup()
 {
     Serial.begin(115200);
@@ -44,23 +56,44 @@ void setup()
     motor4_4.beginEncoder();
     motor7_R.beginEncoder();
 
-    xswc.begin("your-ssid", "your-password", 3540);
+    NoU3.calibrateIMUs();
+
+    xswc.begin("your-ssid", "your-password", processDataReceived, collectDataToSend);
 }
+
+void collectDataToSend()
+{
+    battery_data.value = NoU3.getBatteryVoltage();
+    xswc.sendData_xrp_analog(battery_data);
+}
+
+void processDataReceived()
+{
+    xswc.getData_xrp_motor(motor2_L_data, 2);
+    xswc.getData_xrp_motor(motor3_3_data, 3);
+    xswc.getData_xrp_motor(motor4_4_data, 4);
+    xswc.getData_xrp_motor(motor7_R_data, 5);
+
+    xswc.getData_xrp_servo(servo1_data, 1);
+    xswc.getData_xrp_servo(servo2_data, 2);
+    xswc.getData_xrp_servo(servo3_data, 3);
+    xswc.getData_xrp_servo(servo4_data, 4);
+}
+
 void loop()
 {
-
-    xswc.sendData_xrp_analog({ .id = 0, .value = NoU3.getBatteryVoltage() }, 0);
-
     xswc.update();
-    motor2_L.set(xswc.getValue_xrp_motor(0));
-    motor3_3.set(xswc.getValue_xrp_motor(1));
-    motor4_4.set(xswc.getValue_xrp_motor(2));
-    motor7_R.set(xswc.getValue_xrp_motor(3));
+    NoU3.updateIMUs();
 
-    servo1.write(xswc.getValue_xrp_servo(0));
-    servo2.write(xswc.getValue_xrp_servo(1));
-    servo3.write(xswc.getValue_xrp_servo(2));
-    servo4.write(xswc.getValue_xrp_servo(3));
+    motor2_L.set(motor2_L_data.value);
+    motor3_3.set(motor3_3_data.value);
+    motor4_4.set(motor4_4_data.value);
+    motor7_R.set(motor7_R_data.value);
+
+    servo1.write(servo1_data.value * 180.0);
+    servo2.write(servo2_data.value * 180.0);
+    servo3.write(servo3_data.value * 180.0);
+    servo4.write(servo4_data.value * 180.0);
 
     if (xswc.isConnected()) {
         if (xswc.isEnabled()) {
@@ -71,5 +104,6 @@ void loop()
     } else {
         NoU3.setServiceLight(LIGHT_OFF);
     }
+
     NoU3.updateServiceLight();
 }

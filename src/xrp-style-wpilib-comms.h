@@ -18,8 +18,16 @@
 
 #define UDP_PACKET_MAX_SIZE_XRP 1000 // I think the rpi pico xrp firmware uses 8192, but that's absurdly large
 
+/**
+ * @brief  top level class for the XRP-style WPILib communications
+ * This class handles the UDP communication, message parsing, and data retrieval/sending.
+ */
 class XSWC {
 protected:
+    /**
+     * @brief  Factory class to create message types based on their tag.
+     * This is only used internally by the XSWC class
+     */
     class MessageTypeFactory {
     public:
         static MessageType* createMessageType(uint8_t tag)
@@ -43,10 +51,22 @@ protected:
 public:
     // methods to receive data (add methods when you add new message types)
 
+    /**
+     * @brief  Retrieves data for a specific motor by ID.
+     * @param  data: a reference to an xrp_motor_t structure to fill with data
+     * @param  id: the ID of the motor
+     * @retval (bool) true if data was found, false otherwise
+     */
     bool getData_xrp_motor(xrp_motor_t& data, const uint8_t id)
     {
         return getData<xrp_motor_t>(data, id);
     }
+    /**
+     * @brief  Retrieves the value of a specific motor by ID.
+     * @note   If the motor is not found, it returns 0.0.
+     * @param  id: the ID of the motor
+     * @retval (float) the value of the motor, or 0.0 if not found
+     */
     float getValue_xrp_motor(const uint8_t id)
     {
         xrp_motor_t data;
@@ -54,10 +74,22 @@ public:
             return data.value;
         return 0.0f;
     }
+    /**
+     * @brief  Retrieves data for a specific servo by ID.
+     * @param  data: a reference to an xrp_servo_t structure to fill with data
+     * @param  id: the ID of the servo
+     * @retval (bool) true if data was found, false otherwise
+     */
     bool getData_xrp_servo(xrp_servo_t& data, const uint8_t id)
     {
         return getData<xrp_servo_t>(data, id);
     }
+    /**
+     * @brief  Retrieves the value of a specific servo by ID.
+     * @note   If the servo is not found, it returns 0.0.
+     * @param  id: the ID of the servo
+     * @retval (float) the value of the servo, or 0.0 if not found
+     */
     float getValue_xrp_servo(const uint8_t id)
     {
         xrp_servo_t data;
@@ -65,10 +97,22 @@ public:
             return data.value;
         return 0.0f;
     }
+    /**
+     * @brief  Retrieves data for a specific digital input/output by ID.
+     * @param  data: a reference to an xrp_dio_t structure to fill with data
+     * @param  id: the ID of the digital input/output
+     * @retval (bool) true if data was found, false otherwise
+     */
     bool getData_xrp_dio(xrp_dio_t& data, const uint8_t id)
     {
         return getData<xrp_dio_t>(data, id);
     }
+    /**
+     * @brief  Retrieves the value of a specific digital input/output by ID.
+     * @note   If the digital input/output is not found, it returns false.
+     * @param  id: the ID of the digital input/output
+     * @retval (bool) true if the value is 1 (true), false if the value is 0 (false) or not found
+     */
     bool getValue_xrp_dio(const uint8_t id)
     {
         xrp_dio_t data;
@@ -76,10 +120,22 @@ public:
             return data.value == 1;
         return false;
     }
+    /**
+     * @brief  Retrieves data for a specific analog input by ID.
+     * @param  data: a reference to an xrp_analog_t structure to fill with data
+     * @param  id: the ID of the analog input
+     * @retval (bool) true if data was found, false otherwise
+     */
     bool getData_xrp_analog(xrp_analog_t& data, const uint8_t id)
     {
         return getData<xrp_analog_t>(data, id);
     }
+    /**
+     * @brief  Retrieves the value of a specific analog input by ID.
+     * @note   If the analog input is not found, it returns 0.0.
+     * @param  id: the ID of the analog input
+     * @retval (float) the value of the analog input, or 0.0 if not found
+     */
     float getValue_xrp_analog(const uint8_t id)
     {
         xrp_analog_t data;
@@ -89,10 +145,22 @@ public:
     }
 
     // methods to send data (add methods when you add new message types)
-    bool sendData_xrp_dio(const xrp_dio_t& data)
+    /**
+     * @brief  Sends data for a specific motor.
+     * @param  data: the xrp_motor_t structure containing the data to send (including ID)
+     * @param  checkUniqueness: if true, it checks if a message with the same ID already exists in the sent messages, default false
+     * @retval (bool) true if data was queued successfully, false otherwise
+     */
+    bool sendData_xrp_dio(const xrp_dio_t& data, bool checkUniqueness = false)
     {
-        return sendData<xrp_dio_t>(data);
+        return sendData<xrp_dio_t>(data, checkUniqueness);
     }
+    /**
+     * @brief  Sends data for a specific motor.
+     * @param  data: the xrp_motor_t structure containing the data to send (including ID)
+     * @param  checkUniqueness: if true, it checks if a message with the same ID already exists in the sent messages, default false
+     * @retval (bool) true if data was queued successfully, false otherwise
+     */
     bool sendData_xrp_analog(const xrp_analog_t& data)
     {
         return sendData<xrp_analog_t>(data);
@@ -103,40 +171,80 @@ public:
      * @retval constructor
      */
     XSWC();
-    bool begin(const char* ssid, const char* password, uint16_t port = 3540);
 
     /**
+     * @brief  begin udp communication on given port
+     * @note   YOU PROBABLY DO NOT WANT TO USE THIS FUNCTION
+     * begin() without a network name and password will not connect to a WiFi network, if you use this method, you must connect to a WiFi network before calling this method.
+     * @param  _receiveCallback: a function to call when data is received (add getData methods to the function to retrieve the data)
+     * @param  _sendCallback: a function to call to collect data to send (add sendData methods to the function to send the data)
+     * @param  port: udp port, default 3540
+     * @retval (bool) true if connection was successful, false otherwise
+     */
+    bool begin(void (*_receiveCallback)(void), void (*_sendCallback)(void), uint16_t port = 3540);
+
+    /**
+     * @brief  connect to a WiFi network and begin udp communication on given port
+     * @note   if connection fails, it will create a WiFi network named "XRP-XSWC-AP" with password "password"
+     * @param  ssid: the SSID of the WiFi network to connect to
+     * @param  password: the password for the WiFi network
+     * @param  _receiveCallback: a function to call when data is received (add getData methods to the function to retrieve the data)
+     * @param  _sendCallback: a function to call to collect data to send (add sendData methods to the function to send the data)
+     * @param  hostname: the hostname to use for the WiFi connection, default "XRP-XSWC"
+     * @param  port: the UDP port to use for communication, default 3540
+     * @retval (bool) true if connection was successful, false otherwise
+     */
+    bool begin(const char* ssid, const char* password, void (*_receiveCallback)(void), void (*_sendCallback)(void), const char* hostname = "XRP-XSWC", uint16_t port = 3540);
+
+    /**
+     * @brief  call this in void loop()
      * @retval true if data was just received
      */
     bool update();
 
     bool isConnected();
     bool isEnabled();
+    bool isConnectedAndEnabled();
 
     unsigned long TIMEOUT_MS = 1000;
+    unsigned long MIN_UPDATE_TIME_MS = 50; // 20Hz
+
+    /**
+     * @brief  set to true before calling begin() to skip straight to creating an Access Point
+     */
+    bool useAP = false;
 
 protected:
     template <typename T>
     bool getData(T& data, const uint8_t id = 255);
 
     template <typename T>
-    bool sendData(const T data);
+    bool sendData(const T data, bool checkUniqueness = false);
 
     boolean processReceivedBufferIntoMessages(char* buffer, int length);
     int processMessagesIntoBufferToSend(char* buffer, int length);
 
     WiFiUDP udp; // UDP instance for communication
+
     std::vector<MessageType*> receivedMessages;
     std::vector<MessageType*> sentMessages;
 
     boolean cmdEnable = false;
 
     unsigned long millisWhenLastMessageReceived = -TIMEOUT_MS;
+    unsigned long millisWhenLastSent = -MIN_UPDATE_TIME_MS;
 
     uint16_t txSeq = 0;
 
     char rxBuf[UDP_PACKET_MAX_SIZE_XRP + 1];
     char txBuf[UDP_PACKET_MAX_SIZE_XRP + 1];
+
+    bool connectedToRemote = false;
+    IPAddress udpRemoteAddr = IPAddress();
+    int32_t udpRemotePort = -1;
+
+    void (*sendCallback)(void);
+    void (*receiveCallback)(void);
 
 }; // end class XSWC
 

@@ -37,10 +37,6 @@ public:
     {
         return data.id;
     }
-    void setId(uint8_t id) override
-    {
-        data.id = id;
-    }
     void setData(const void* dataPtr) override
     {
         if (dataPtr != nullptr) {

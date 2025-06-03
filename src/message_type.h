@@ -7,7 +7,6 @@ public:
     virtual uint8_t getId() = 0;
     virtual void* getData() = 0;
     virtual void setData(const void* data) = 0;
-    virtual void setId(const uint8_t id) = 0;
     virtual int toNetworkBuffer(char* buffer, int pos, int end) = 0;
     virtual int fromNetworkBuffer(char* buf, int pos, int end) = 0;
 

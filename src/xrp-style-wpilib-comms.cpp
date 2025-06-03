@@ -26,16 +26,18 @@ bool XSWC::getData(T& data, const uint8_t id)
 
 // save data into list of messages to send
 template <typename T>
-bool XSWC::sendData(T data)
+bool XSWC::sendData(T data, bool checkUniqueness)
 {
     MessageType* message = nullptr;
-    // search sent messages for a message with tag and id as assign
-    for (MessageType* msg : sentMessages) {
-        if (msg->getTag() == TYPE_TO_TAG_VAL(T) && (msg->hasId() == false || msg->getId() == data.id)) {
-            // Found a message of the correct type and with the correct ID
-            // we'll overwrite it
-            message = msg;
-            break;
+    if (checkUniqueness) {
+        // search sent messages for a message with tag and id
+        for (MessageType* msg : sentMessages) {
+            if (msg->getTag() == TYPE_TO_TAG_VAL(T) && (msg->hasId() == false || msg->getId() == data.id)) {
+                // Found a message of the correct type and with the correct ID
+                // we'll overwrite it
+                message = msg;
+                break;
+            }
         }
     }
     if (message == nullptr) {
@@ -44,7 +46,6 @@ bool XSWC::sendData(T data)
     }
     if (message != nullptr) {
         message->setData(&data);
-        message->setId(id); // message types without an id will just not save the id
         sentMessages.push_back(message);
         return true; // Data successfully added to the list
     }
@@ -96,37 +97,50 @@ int XSWC::processMessagesIntoBufferToSend(char* buffer, int length)
     return index;
 }
 
-bool XSWC::begin(const char* ssid, const char* password, uint16_t port)
+bool XSWC::begin(void (*_receiveCallback)(void), void (*_sendCallback)(void), uint16_t port)
 {
-    WiFi.setHostname("XRP-XSWC"); // Set a hostname for the WiFi connection // TODO: make customizable
-
-    bool shouldUseAP = false;
-    WiFiMulti multi;
-
-    if (false) { // TODO: allow for directly creating an AP
-        shouldUseAP = true;
-    } else {
-        multi.addAP(ssid, password); // TODO: could be a list, or from a configuration file
-
-        // Attempt to connect
-        if (multi.run() != WL_CONNECTED) {
-            Serial.println("[NET] Failed to connect to any network on list. Falling back to AP");
-            shouldUseAP = true;
-        }
-    }
-
-    if (shouldUseAP) {
-        Serial.println("[NET] creating AP with ssid: XRP-XSWC-AP and password: password");
-        WiFi.softAP("XRP-XSWC-AP", "password");
-    }
-
     // Set up UDP
     udp.begin(port);
 
     Serial.println("[NET] Network Ready");
     Serial.printf("[NET] SSID: %s\n", WiFi.SSID().c_str());
     Serial.printf("[NET] IP: %s\n", WiFi.localIP().toString().c_str());
+    Serial.printf("[NET] UDP Port: %d\n", port);
+    Serial.printf("[NET] IP Address: %s\n", WiFi.localIP().toString().c_str());
 
+    return true;
+}
+
+bool XSWC::begin(const char* ssid, const char* password, void (*_receiveCallback)(void), void (*_sendCallback)(void), const char* hostname, uint16_t port)
+{
+    // Set the callbacks
+    if (_receiveCallback == nullptr || _sendCallback == nullptr) {
+        return false;
+    }
+    receiveCallback = _receiveCallback;
+    sendCallback = _sendCallback;
+
+    WiFi.setHostname(hostname);
+
+    WiFiMulti multi;
+
+    if (useAP == false) {
+        multi.addAP(ssid, password); // TODO: could be a list, or from a configuration file
+
+        // Attempt to connect
+        if (multi.run() != WL_CONNECTED) {
+            Serial.println("[NET] Failed to connect to any network on list. Falling back to AP");
+            useAP = true;
+        }
+    }
+
+    if (useAP) {
+        // TODO: make customizable
+        Serial.println("[NET] creating AP with ssid: XRP-XSWC-AP and password: password");
+        WiFi.softAP("XRP-XSWC-AP", "password");
+    }
+
+    begin(_receiveCallback, _sendCallback, port);
     return true;
 }
 
@@ -134,7 +148,30 @@ bool XSWC::update()
 {
     bool gotPacket = false;
     int packetSize = udp.parsePacket();
+
+    if (millis() - millisWhenLastMessageReceived > TIMEOUT_MS) {
+        // reset connection if no messages received for a while
+        connectedToRemote = false;
+        udpRemoteAddr = IPAddress();
+        udpRemotePort = -1;
+    }
+
     if (packetSize) {
+        Serial.print("\n\n        GOT PACKET        \n");
+        for (int i = 0; i < packetSize; i++) {
+            Serial.print(udp.read());
+            Serial.print(" ");
+        }
+        Serial.println();
+        if (!connectedToRemote) {
+            udpRemoteAddr = udp.remoteIP();
+            udpRemotePort = udp.remotePort();
+            connectedToRemote = true;
+            txSeq = 0;
+        } else if (udpRemoteAddr != udp.remoteIP() || udpRemotePort != udp.remotePort()) {
+            return false; // ignore packets from other addresses (prevent two devices from sending commands at the same time)
+        }
+
         millisWhenLastMessageReceived = millis();
         int receivedPacketSize = udp.read(rxBuf, UDP_PACKET_MAX_SIZE_XRP);
         // clear list or received messages before parsing the packet into messages
@@ -143,14 +180,15 @@ bool XSWC::update()
         }
         receivedMessages.clear();
         processReceivedBufferIntoMessages(rxBuf, receivedPacketSize);
-        // TODO: CALL gotDataCallback()
+        receiveCallback();
         gotPacket = true;
     }
 
-    if (true) { // TODO: PERIODIC
-        // TODO: CALL sendDataCallback()
+    if (millis() - millisWhenLastSent > MIN_UPDATE_TIME_MS) {
+        millisWhenLastSent = millis();
+        sendCallback();
         int txSize = processMessagesIntoBufferToSend(txBuf, UDP_PACKET_MAX_SIZE_XRP);
-        if (true) { // TODO: IF CONNECTED (has remote address)
+        if (connectedToRemote) {
             udp.beginPacket(); // udpRemoteAddr.toString().c_str(), udpRemotePort);
             udp.write((byte*)txBuf, txSize); // TODO: WHAT TYPE? byte or char?
             udp.endPacket();
@@ -173,6 +211,11 @@ bool XSWC::isConnected()
 bool XSWC::isEnabled()
 {
     return cmdEnable;
+}
+
+bool XSWC::isConnectedAndEnabled()
+{
+    return isConnected() && isEnabled();
 }
 
 XSWC xswc; // make a global instance
