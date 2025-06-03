@@ -21,7 +21,7 @@ boolean XSWC::processReceivedBufferIntoMessages(char* buffer, int length)
     int index = 0;
     int sequence = networkToUInt16(buffer, 0); // TODO: USE sequence to toss out of order data
     cmdEnable = ((uint8_t)buffer[2] == 1);
-    //TODO: WHAT'S ACTUALLY HAPPENING WITH (uint8_t) VS (CHAR)
+    // TODO: WHAT'S ACTUALLY HAPPENING WITH (uint8_t) VS (CHAR)
     index += 3;
     while (index + 2 < length) { // min size of a block is 2
         // process "data blocks" each block is a message
@@ -35,7 +35,7 @@ boolean XSWC::processReceivedBufferIntoMessages(char* buffer, int length)
         if (msg != nullptr) {
             int indexIncrement = msg->fromNetworkBuffer(buffer, index, length);
             index += indexIncrement;
-            if (indexIncrement == size) { // fromNetworkBuffer succeeded
+            if (indexIncrement + 1 == size) { // fromNetworkBuffer succeeded (+1 is for the size byte itself)
                 receivedMessages.push_back(msg);
             } else {
                 delete msg; // clean up
@@ -129,7 +129,6 @@ bool XSWC::update()
     }
 
     if (packetSize) {
-        Serial.print("\n\n        GOT PACKET        \n");
         if (!connectedToRemote) {
             udpRemoteAddr = udp.remoteIP();
             udpRemotePort = udp.remotePort();
@@ -141,11 +140,6 @@ bool XSWC::update()
 
         millisWhenLastMessageReceived = millis();
         int receivedPacketSize = udp.read(rxBuf, UDP_PACKET_MAX_SIZE_XRP);
-        for (int i = 0; i < packetSize; i++) {
-            Serial.print((uint8_t)rxBuf[i]);
-            Serial.print(" ");
-        }
-        Serial.println();
 
         // clear list or received messages before parsing the packet into messages
         for (MessageType* msg : receivedMessages) {
