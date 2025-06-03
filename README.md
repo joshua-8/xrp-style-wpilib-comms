@@ -8,6 +8,8 @@ The goal is for this library to be compatible with the protocol meant for XRP ro
 
 This library uses the standard Arduino WiFi and UDP library.
 
+### documentation for this library [HERE](https://joshua-8.github.io/xrp-style-wpilib-comms/class_x_s_w_c.html)
+
 # compatible with:
 * [Alfredo Systems NoU3](https://www.alfredosys.com/products/alfredo-nou3/) - untested
 * ESP32 devboard ([Alfredo Systems NoU2](https://www.alfredosys.com/products/alfredo-nou2/) and [RCMv4](https://github.com/RCMgames/RCM-Hardware-V4)) - untested
