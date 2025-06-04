@@ -11,5 +11,5 @@ var searchData=
   ['getvalue_5fxrp_5fdio_8',['getValue_xrp_dio',['../class_x_s_w_c.html#ad00a75fbcb81939f6d31fa7e7e86a8a8',1,'XSWC']]],
   ['getvalue_5fxrp_5fmotor_9',['getValue_xrp_motor',['../class_x_s_w_c.html#aea7c21a00d9e544401ccdbf14c0334b8',1,'XSWC']]],
   ['getvalue_5fxrp_5fservo_10',['getValue_xrp_servo',['../class_x_s_w_c.html#a4254b717eb3ea336ee22c779c7b07bc8',1,'XSWC']]],
-  ['github_20io_20xrp_20style_20wpilib_20comms_20class_5fx_5fs_5fw_5fc_20html_20here_20a_11',['documentation for this library &lt;a href=&quot;https://joshua-8.github.io/xrp-style-wpilib-comms/class_x_s_w_c.html&quot; &gt;HERE&lt;/a&gt;',['../index.html#autotoc_md2',1,'']]]
+  ['github_20io_20xrp_20style_20wpilib_20comms_20class_5fx_5fs_5fw_5fc_20html_20here_20a_11',['documentation for this library &lt;a href=&quot;https://joshua-8.github.io/xrp-style-wpilib-comms/class_x_s_w_c.html&quot; &gt;HERE&lt;/a&gt;',['../index.html#autotoc_md1',1,'']]]
 ];

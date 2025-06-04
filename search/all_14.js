@@ -1,7 +1,7 @@
 var searchData=
 [
   ['xrp_20style_20wpilib_20comms_0',['xrp-style-wpilib-comms',['../index.html',1,'']]],
-  ['xrp_20style_20wpilib_20comms_20class_5fx_5fs_5fw_5fc_20html_20here_20a_1',['documentation for this library &lt;a href=&quot;https://joshua-8.github.io/xrp-style-wpilib-comms/class_x_s_w_c.html&quot; &gt;HERE&lt;/a&gt;',['../index.html#autotoc_md2',1,'']]],
+  ['xrp_20style_20wpilib_20comms_20class_5fx_5fs_5fw_5fc_20html_20here_20a_1',['documentation for this library &lt;a href=&quot;https://joshua-8.github.io/xrp-style-wpilib-comms/class_x_s_w_c.html&quot; &gt;HERE&lt;/a&gt;',['../index.html#autotoc_md1',1,'']]],
   ['xrp_2dstyle_2dwpilib_2dcomms_2ecpp_2',['xrp-style-wpilib-comms.cpp',['../xrp-style-wpilib-comms_8cpp.html',1,'']]],
   ['xrp_2dstyle_2dwpilib_2dcomms_2eh_3',['xrp-style-wpilib-comms.h',['../xrp-style-wpilib-comms_8h.html',1,'']]],
   ['xrp_5fanalog_2eh_4',['xrp_analog.h',['../xrp__analog_8h.html',1,'']]],
