@@ -62,7 +62,6 @@ public:
         float value = networkToFloat(buf, pos + 2);
         data.id = channelID;
         data.value = value;
-        Serial.println(value);
         return 6; // 1 byte for tag, 1 byte for id, 4 bytes for value
     }
 
