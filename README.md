@@ -2,8 +2,6 @@
 [![arduino-library-badge](https://www.ardu-badge.com/badge/xrp-style-wpilib-comms.svg?)](https://www.ardu-badge.com/xrp-style-wpilib-comms)
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/joshua1024/library/xrp-style-wpilib-comms.svg)](https://registry.platformio.org/libraries/joshua1024/xrp-style-wpilib-comms)
 
-# work in progress
-
 This library is not officially associated with XRP or wpilib, but it builds on their excellent work of connecting XRP control boards to wpilib.
 
 The goal is for this library to be compatible with the protocol meant for XRP robots running the [xrp-wpilib-firmware](https://github.com/wpilibsuite/xrp-wpilib-firmware). 
