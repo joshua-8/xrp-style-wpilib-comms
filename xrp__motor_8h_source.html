@@ -177,23 +177,22 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordtype">float</span> value = <a class="code hl_function" href="byteutils_8cpp.html#a0ca0d92443a750ed815bf12a3a7ed549">networkToFloat</a>(buf, pos + 2);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_variable" href="class_xrp_motor.html#a23647e230575f081e9e76564e766f5e0">data</a>.<a class="code hl_variable" href="structxrp__motor__t.html#a1ce495b6152acdddbbe03f8a716d1f22">id</a> = channelID;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_variable" href="class_xrp_motor.html#a23647e230575f081e9e76564e766f5e0">data</a>.<a class="code hl_variable" href="structxrp__motor__t.html#a33f7ae6cd6b30f70f9470b10e1eb4b2c">value</a> = value;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        Serial.println(value);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">return</span> 6; <span class="comment">// 1 byte for tag, 1 byte for id, 4 bytes for value</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span> 6; <span class="comment">// 1 byte for tag, 1 byte for id, 4 bytes for value</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
 </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// the default destructor is fine </span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_xrp_motor.html#a23647e230575f081e9e76564e766f5e0">   72</a></span>    <a class="code hl_struct" href="structxrp__motor__t.html">xrp_motor_t</a> <a class="code hl_variable" href="class_xrp_motor.html#a23647e230575f081e9e76564e766f5e0">data</a>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">// the default destructor is fine </span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_xrp_motor.html#a23647e230575f081e9e76564e766f5e0">   71</a></span>    <a class="code hl_struct" href="structxrp__motor__t.html">xrp_motor_t</a> <a class="code hl_variable" href="class_xrp_motor.html#a23647e230575f081e9e76564e766f5e0">data</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
 </div>
 <div class="ttc" id="abyteutils_8cpp_html_a0ca0d92443a750ed815bf12a3a7ed549"><div class="ttname"><a href="byteutils_8cpp.html#a0ca0d92443a750ed815bf12a3a7ed549">networkToFloat</a></div><div class="ttdeci">float networkToFloat(char *buf, int offset)</div><div class="ttdef"><b>Definition</b> byteutils.cpp:9</div></div>
 <div class="ttc" id="abyteutils_8h_html"><div class="ttname"><a href="byteutils_8h.html">byteutils.h</a></div></div>
 <div class="ttc" id="aclass_message_type_html"><div class="ttname"><a href="class_message_type.html">MessageType</a></div><div class="ttdef"><b>Definition</b> message_type.h:3</div></div>
 <div class="ttc" id="aclass_xrp_motor_html"><div class="ttname"><a href="class_xrp_motor.html">XrpMotor</a></div><div class="ttdef"><b>Definition</b> xrp_motor.h:18</div></div>
 <div class="ttc" id="aclass_xrp_motor_html_a0fb7da1062b484d8da60bafe6f49e53b"><div class="ttname"><a href="class_xrp_motor.html#a0fb7da1062b484d8da60bafe6f49e53b">XrpMotor::XrpMotor</a></div><div class="ttdeci">XrpMotor(uint8_t id, float value)</div><div class="ttdef"><b>Definition</b> xrp_motor.h:24</div></div>
-<div class="ttc" id="aclass_xrp_motor_html_a23647e230575f081e9e76564e766f5e0"><div class="ttname"><a href="class_xrp_motor.html#a23647e230575f081e9e76564e766f5e0">XrpMotor::data</a></div><div class="ttdeci">xrp_motor_t data</div><div class="ttdef"><b>Definition</b> xrp_motor.h:72</div></div>
+<div class="ttc" id="aclass_xrp_motor_html_a23647e230575f081e9e76564e766f5e0"><div class="ttname"><a href="class_xrp_motor.html#a23647e230575f081e9e76564e766f5e0">XrpMotor::data</a></div><div class="ttdeci">xrp_motor_t data</div><div class="ttdef"><b>Definition</b> xrp_motor.h:71</div></div>
 <div class="ttc" id="aclass_xrp_motor_html_a2b417d1087ba40a6f15eab4422f7ed4b"><div class="ttname"><a href="class_xrp_motor.html#a2b417d1087ba40a6f15eab4422f7ed4b">XrpMotor::getTag</a></div><div class="ttdeci">int getTag() override</div><div class="ttdef"><b>Definition</b> xrp_motor.h:29</div></div>
 <div class="ttc" id="aclass_xrp_motor_html_a3057e3ab3d1079a38c9604844d7f5583"><div class="ttname"><a href="class_xrp_motor.html#a3057e3ab3d1079a38c9604844d7f5583">XrpMotor::getData</a></div><div class="ttdeci">void * getData() override</div><div class="ttdef"><b>Definition</b> xrp_motor.h:47</div></div>
 <div class="ttc" id="aclass_xrp_motor_html_a61c018762ce01029344e374daf025fcb"><div class="ttname"><a href="class_xrp_motor.html#a61c018762ce01029344e374daf025fcb">XrpMotor::hasId</a></div><div class="ttdeci">bool hasId() override</div><div class="ttdef"><b>Definition</b> xrp_motor.h:33</div></div>
