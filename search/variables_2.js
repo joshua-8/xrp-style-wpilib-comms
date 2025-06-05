@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['id_0',['id',['../structxrp__analog__t.html#ae9f234eb483ece20bdb0778dd0c5429f',1,'xrp_analog_t::id'],['../structxrp__dio__t.html#a8fb849e2cd9eb37074ade161a1501e86',1,'xrp_dio_t::id'],['../structxrp__motor__t.html#a1ce495b6152acdddbbe03f8a716d1f22',1,'xrp_motor_t::id'],['../structxrp__servo__t.html#a2eb2cf692b43bdf1f2961ec97e5a750b',1,'xrp_servo_t::id']]]
+  ['data_0',['data',['../class_xrp_accel.html#a4c129585b31dade3d2799a2f3fdeeb5b',1,'XrpAccel::data'],['../class_xrp_analog.html#a2161d8825df97d5a26235820acce31cd',1,'XrpAnalog::data'],['../class_xrp_dio.html#a07d1ec5ec6abd08b38bc2e0f0f3c3d95',1,'XrpDio::data'],['../class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358',1,'XRPEncoder::data'],['../class_xrp_gyro.html#ab53d031c64704e1a31ec31808e693e92',1,'XrpGyro::data'],['../class_xrp_motor.html#a23647e230575f081e9e76564e766f5e0',1,'XrpMotor::data'],['../class_xrp_servo.html#a3d38b6e62c160b5a5b96ed5dffb66e11',1,'XrpServo::data']]],
+  ['divisor_1',['divisor',['../structxrp__encoder__t.html#acaef7ce51753a3a9521182f692758dfb',1,'xrp_encoder_t']]]
 ];

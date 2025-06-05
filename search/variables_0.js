@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['cmdenable_0',['cmdEnable',['../class_x_s_w_c.html#a1cf12d09a8b18652ef5cb0229c075544',1,'XSWC']]],
-  ['connectedtoremote_1',['connectedToRemote',['../class_x_s_w_c.html#a8eff281a2a94f8aac692a5b5ec55fea6',1,'XSWC']]]
+  ['accels_0',['accels',['../structxrp__accel__t.html#accc43f241a7d7d5d5c139addef0e4bfb',1,'xrp_accel_t']]],
+  ['angles_1',['angles',['../structxrp__gyro__t.html#a1427124afc56f933c62d34206bbcc57a',1,'xrp_gyro_t']]]
 ];

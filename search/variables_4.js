@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['receivecallback_0',['receiveCallback',['../class_x_s_w_c.html#a377de969795a32f7563429f37704285b',1,'XSWC']]],
-  ['receivedmessages_1',['receivedMessages',['../class_x_s_w_c.html#ad3c1987108c5808e59ee376ed0874245',1,'XSWC']]],
-  ['rxbuf_2',['rxBuf',['../class_x_s_w_c.html#aa4b3f0dbee3eb3d64674071a6a51e424',1,'XSWC']]]
+  ['milliswhenlastmessagereceived_0',['millisWhenLastMessageReceived',['../class_x_s_w_c.html#a5231f5ee32fe838c57a9a1cb44e456cc',1,'XSWC']]],
+  ['milliswhenlastsent_1',['millisWhenLastSent',['../class_x_s_w_c.html#a6a9659f7d640e2ada41a91189148822d',1,'XSWC']]],
+  ['min_5fupdate_5ftime_5fms_2',['MIN_UPDATE_TIME_MS',['../class_x_s_w_c.html#a8e0131fe33aed93e685e6c072e136714',1,'XSWC']]]
 ];

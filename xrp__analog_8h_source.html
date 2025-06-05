@@ -163,14 +163,14 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_xrp_analog.html#a097a298d35fd62c8a9293fd741f1300e">   51</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_xrp_analog.html#a097a298d35fd62c8a9293fd741f1300e">toNetworkBuffer</a>(<span class="keywordtype">char</span>* buffer, <span class="keywordtype">int</span> pos, <span class="keywordtype">int</span> end)<span class="keyword"> override</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span> (end - pos &lt; 6) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span> (end - pos &lt; 7) {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        buffer[pos] = 5; <span class="comment">// size excluding itself</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        buffer[pos] = 6; <span class="comment">// size excluding size byte itself</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        buffer[pos + 1] = XRP_TAG_ANALOG;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        buffer[pos + 2] = <a class="code hl_variable" href="class_xrp_analog.html#a2161d8825df97d5a26235820acce31cd">data</a>.<a class="code hl_variable" href="structxrp__analog__t.html#ae9f234eb483ece20bdb0778dd0c5429f">id</a>;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_function" href="byteutils_8cpp.html#af944c25fba9222ba144b9d6dac4358d7">floatToNetwork</a>(<a class="code hl_variable" href="class_xrp_analog.html#a2161d8825df97d5a26235820acce31cd">data</a>.<a class="code hl_variable" href="structxrp__analog__t.html#a8baa1c59f06c6ff802c991faad384cc9">value</a>, buffer, pos + 3);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span> 6; <span class="comment">// 1 byte for size, 1 for tag, 1 for id, 4 for value</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span> 7; <span class="comment">// 1 for size, 1 for tag, 1 for id, 4 for value</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
 </div>
 <div class="foldopen" id="foldopen00062" data-start="{" data-end="}">

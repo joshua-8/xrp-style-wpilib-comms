@@ -1,0 +1,7 @@
+<map id="XrpAccel" name="XrpAccel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="78,94,152,120"/>
+<area shape="rect" id="Node000002" href="$class_message_type.html" title=" " alt="" coords="5,5,108,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,42,109,92,105,95,71,45"/>
+<area shape="rect" id="Node000003" href="$structxrp__accel__t.html" title=" " alt="" coords="132,5,219,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,45,126,95,121,92,156,42"/>
+</map>

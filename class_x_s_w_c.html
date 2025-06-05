@@ -133,11 +133,35 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad0f96dbd1905fd307f0b1cd61b7982e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of a specific analog input by ID.  <br /></td></tr>
 <tr class="separator:ad0f96dbd1905fd307f0b1cd61b7982e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae09550f5af185d5f4bf9b7efed787f08" id="r_ae09550f5af185d5f4bf9b7efed787f08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae09550f5af185d5f4bf9b7efed787f08">sendData_xrp_dio</a> (const <a class="el" href="structxrp__dio__t.html">xrp_dio_t</a> &amp;data, bool checkUniqueness=false)</td></tr>
-<tr class="memdesc:ae09550f5af185d5f4bf9b7efed787f08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data for a specific motor.  <br /></td></tr>
+<tr class="memdesc:ae09550f5af185d5f4bf9b7efed787f08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data for a specific digital input by ID.  <br /></td></tr>
 <tr class="separator:ae09550f5af185d5f4bf9b7efed787f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dcec3cfcf32e029672747076c2076fc" id="r_a8dcec3cfcf32e029672747076c2076fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dcec3cfcf32e029672747076c2076fc">sendValue_xrp_dio</a> (const uint8_t id, bool value, bool checkUniqueness=false)</td></tr>
+<tr class="memdesc:a8dcec3cfcf32e029672747076c2076fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a boolean value for a specific digital input/output by ID.  <br /></td></tr>
+<tr class="separator:a8dcec3cfcf32e029672747076c2076fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af53d40f25508a969caf3f1819a28f002" id="r_af53d40f25508a969caf3f1819a28f002"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af53d40f25508a969caf3f1819a28f002">sendData_xrp_analog</a> (const <a class="el" href="structxrp__analog__t.html">xrp_analog_t</a> &amp;data, bool checkUniqueness=false)</td></tr>
-<tr class="memdesc:af53d40f25508a969caf3f1819a28f002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data for a specific motor.  <br /></td></tr>
+<tr class="memdesc:af53d40f25508a969caf3f1819a28f002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data for a specific analog input by ID.  <br /></td></tr>
 <tr class="separator:af53d40f25508a969caf3f1819a28f002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99bb6177c1defc9961b2fc5a694ffa7" id="r_ae99bb6177c1defc9961b2fc5a694ffa7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae99bb6177c1defc9961b2fc5a694ffa7">sendValue_xrp_analog</a> (const uint8_t id, float value, bool checkUniqueness=false)</td></tr>
+<tr class="memdesc:ae99bb6177c1defc9961b2fc5a694ffa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a float value for a specific analog input by ID.  <br /></td></tr>
+<tr class="separator:ae99bb6177c1defc9961b2fc5a694ffa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8872dc07da4202575ea982020439b60" id="r_af8872dc07da4202575ea982020439b60"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8872dc07da4202575ea982020439b60">sendData_xrp_encoder</a> (const <a class="el" href="structxrp__encoder__t.html">xrp_encoder_t</a> &amp;data, bool checkUniqueness=false)</td></tr>
+<tr class="memdesc:af8872dc07da4202575ea982020439b60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data for a specific encoder by ID.  <br /></td></tr>
+<tr class="separator:af8872dc07da4202575ea982020439b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd3c87ad804a9d4816f58e3b5ca7cd17" id="r_afd3c87ad804a9d4816f58e3b5ca7cd17"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd3c87ad804a9d4816f58e3b5ca7cd17">sendValue_xrp_encoder</a> (const uint8_t id, int32_t count, int32_t period=0, int32_t divisor=1, bool checkUniqueness=false)</td></tr>
+<tr class="memdesc:afd3c87ad804a9d4816f58e3b5ca7cd17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends values for a specific encoder by ID.  <br /></td></tr>
+<tr class="separator:afd3c87ad804a9d4816f58e3b5ca7cd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e9bfb1d303b6a2804986007bc5389c1" id="r_a2e9bfb1d303b6a2804986007bc5389c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e9bfb1d303b6a2804986007bc5389c1">sendData_xrp_gyro</a> (const <a class="el" href="structxrp__gyro__t.html">xrp_gyro_t</a> &amp;data, bool checkUniqueness=false)</td></tr>
+<tr class="memdesc:a2e9bfb1d303b6a2804986007bc5389c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends gyroscope data.  <br /></td></tr>
+<tr class="separator:a2e9bfb1d303b6a2804986007bc5389c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb59b051dd544f10088ad1bf9e1226e" id="r_a9cb59b051dd544f10088ad1bf9e1226e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cb59b051dd544f10088ad1bf9e1226e">sendValue_xrp_gyro</a> (float xRate, float yRate, float zRate, float roll, float pitch, float yaw, bool checkUniqueness=false)</td></tr>
+<tr class="memdesc:a9cb59b051dd544f10088ad1bf9e1226e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends gyroscope values.  <br /></td></tr>
+<tr class="separator:a9cb59b051dd544f10088ad1bf9e1226e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9ff0e7e7a10416e5b8a7ed1c1acc06" id="r_a6c9ff0e7e7a10416e5b8a7ed1c1acc06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c9ff0e7e7a10416e5b8a7ed1c1acc06">sendData_xrp_accel</a> (const <a class="el" href="structxrp__accel__t.html">xrp_accel_t</a> &amp;data, bool checkUniqueness=false)</td></tr>
+<tr class="memdesc:a6c9ff0e7e7a10416e5b8a7ed1c1acc06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends accelerometer data.  <br /></td></tr>
+<tr class="separator:a6c9ff0e7e7a10416e5b8a7ed1c1acc06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cecdf0d6938a53465f3bf41153108ab" id="r_a0cecdf0d6938a53465f3bf41153108ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cecdf0d6938a53465f3bf41153108ab">sendValue_xrp_accel</a> (const uint8_t id, float xAccel, float yAccel, float zAccel, bool checkUniqueness=false)</td></tr>
+<tr class="memdesc:a0cecdf0d6938a53465f3bf41153108ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends accelerometer values.  <br /></td></tr>
+<tr class="separator:a0cecdf0d6938a53465f3bf41153108ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9600dbfcd46fd95e02a857d80d02d12f" id="r_a9600dbfcd46fd95e02a857d80d02d12f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9600dbfcd46fd95e02a857d80d02d12f">XSWC</a> ()</td></tr>
 <tr class="memdesc:a9600dbfcd46fd95e02a857d80d02d12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor of <a class="el" href="class_x_s_w_c.html" title="top level class for the XRP-style WPILib communications This class handles the UDP communication,...">XSWC</a> class, use the global xswc instance to access this class  <br /></td></tr>
 <tr class="separator:a9600dbfcd46fd95e02a857d80d02d12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -845,6 +869,51 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a6c9ff0e7e7a10416e5b8a7ed1c1acc06" name="a6c9ff0e7e7a10416e5b8a7ed1c1acc06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c9ff0e7e7a10416e5b8a7ed1c1acc06">&#9670;&#160;</a></span>sendData_xrp_accel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool XSWC::sendData_xrp_accel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structxrp__accel__t.html">xrp_accel_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkUniqueness</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends accelerometer data. </p>
+<dl class="section note"><dt>Note</dt><dd>XRP accelerometer data doesn't have an ID, so only one accelerometer can be transmitted </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>the <a class="el" href="structxrp__accel__t.html">xrp_accel_t</a> structure containing the accelerometer data </td></tr>
+    <tr><td class="paramname">checkUniqueness</td><td>If true, it checks if a message with the same ID already exists in the sent messages, default false </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">(bool)</td><td>true if data was queued successfully, false otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af53d40f25508a969caf3f1819a28f002" name="af53d40f25508a969caf3f1819a28f002"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af53d40f25508a969caf3f1819a28f002">&#9670;&#160;</a></span>sendData_xrp_analog()</h2>
 
@@ -872,11 +941,11 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Sends data for a specific motor. </p>
+<p>Sends data for a specific analog input by ID. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>the <a class="el" href="structxrp__motor__t.html">xrp_motor_t</a> structure containing the data to send (including ID) </td></tr>
-    <tr><td class="paramname">checkUniqueness</td><td>if true, it checks if a message with the same ID already exists in the sent messages, default false </td></tr>
+    <tr><td class="paramname">data</td><td>the <a class="el" href="structxrp__analog__t.html">xrp_analog_t</a> structure containing the data to send (including ID) </td></tr>
+    <tr><td class="paramname">checkUniqueness</td><td>If true, it checks if a message with the same ID already exists in the sent messages, default false </td></tr>
   </table>
   </dd>
 </dl>
@@ -916,11 +985,399 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Sends data for a specific motor. </p>
+<p>Sends data for a specific digital input by ID. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>the <a class="el" href="structxrp__motor__t.html">xrp_motor_t</a> structure containing the data to send (including ID) </td></tr>
+    <tr><td class="paramname">data</td><td>the <a class="el" href="structxrp__dio__t.html">xrp_dio_t</a> structure containing the data to send (including ID) </td></tr>
     <tr><td class="paramname">checkUniqueness</td><td>if true, it checks if a message with the same ID already exists in the sent messages, default false </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">(bool)</td><td>true if data was queued successfully, false otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af8872dc07da4202575ea982020439b60" name="af8872dc07da4202575ea982020439b60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8872dc07da4202575ea982020439b60">&#9670;&#160;</a></span>sendData_xrp_encoder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool XSWC::sendData_xrp_encoder </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structxrp__encoder__t.html">xrp_encoder_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkUniqueness</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends data for a specific encoder by ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>the <a class="el" href="structxrp__encoder__t.html">xrp_encoder_t</a> structure containing the data to send (including ID) </td></tr>
+    <tr><td class="paramname">checkUniqueness</td><td>If true, it checks if a message with the same ID already exists in the sent messages, default false </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">(bool)</td><td>true if data was queued successfully, false otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2e9bfb1d303b6a2804986007bc5389c1" name="a2e9bfb1d303b6a2804986007bc5389c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e9bfb1d303b6a2804986007bc5389c1">&#9670;&#160;</a></span>sendData_xrp_gyro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool XSWC::sendData_xrp_gyro </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structxrp__gyro__t.html">xrp_gyro_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkUniqueness</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends gyroscope data. </p>
+<dl class="section note"><dt>Note</dt><dd>XRP gyroscope data doesn't have an ID, so only one gyroscope can be transmitted </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>the <a class="el" href="structxrp__gyro__t.html">xrp_gyro_t</a> structure containing the gyroscope data </td></tr>
+    <tr><td class="paramname">checkUniqueness</td><td>If true, it checks if a message with the same ID already exists in the sent messages, default false </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">(bool)</td><td>true if data was queued successfully, false otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0cecdf0d6938a53465f3bf41153108ab" name="a0cecdf0d6938a53465f3bf41153108ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cecdf0d6938a53465f3bf41153108ab">&#9670;&#160;</a></span>sendValue_xrp_accel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool XSWC::sendValue_xrp_accel </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>xAccel</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>yAccel</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>zAccel</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkUniqueness</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends accelerometer values. </p>
+<dl class="section note"><dt>Note</dt><dd>XRP accelerometer data doesn't have an ID, so only one accelerometer can be transmitted </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xAccel</td><td>(float) acceleration in X/forward direction </td></tr>
+    <tr><td class="paramname">yAccel</td><td>(float) acceleration in Y/left direction </td></tr>
+    <tr><td class="paramname">zAccel</td><td>(float) acceleration in Z/up direction </td></tr>
+    <tr><td class="paramname">checkUniqueness</td><td>If true, it checks if a message with the same ID already exists in the sent messages, default false </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">(bool)</td><td>true if data was queued successfully, false otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae99bb6177c1defc9961b2fc5a694ffa7" name="ae99bb6177c1defc9961b2fc5a694ffa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae99bb6177c1defc9961b2fc5a694ffa7">&#9670;&#160;</a></span>sendValue_xrp_analog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool XSWC::sendValue_xrp_analog </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkUniqueness</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends a float value for a specific analog input by ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>the ID of the analog input </td></tr>
+    <tr><td class="paramname">value</td><td>(float) the value to send </td></tr>
+    <tr><td class="paramname">checkUniqueness</td><td>If true, it checks if a message with the same ID already exists in the sent messages, default false </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">(bool)</td><td>true if data was queued successfully, false otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8dcec3cfcf32e029672747076c2076fc" name="a8dcec3cfcf32e029672747076c2076fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dcec3cfcf32e029672747076c2076fc">&#9670;&#160;</a></span>sendValue_xrp_dio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool XSWC::sendValue_xrp_dio </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkUniqueness</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Send a boolean value for a specific digital input/output by ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>the ID of the digital input/output </td></tr>
+    <tr><td class="paramname">value</td><td>(bool) the boolean value to send (true or false) </td></tr>
+    <tr><td class="paramname">checkUniqueness</td><td>If true, it checks if a message with the same ID already exists in the sent messages, default false </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">(bool)</td><td>true if data was queued successfully, false otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afd3c87ad804a9d4816f58e3b5ca7cd17" name="afd3c87ad804a9d4816f58e3b5ca7cd17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd3c87ad804a9d4816f58e3b5ca7cd17">&#9670;&#160;</a></span>sendValue_xrp_encoder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool XSWC::sendValue_xrp_encoder </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>period</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>divisor</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkUniqueness</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends values for a specific encoder by ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>the ID of the encoder </td></tr>
+    <tr><td class="paramname">count</td><td>(int32_t) count of encoder ticks </td></tr>
+    <tr><td class="paramname">period</td><td>(int32_t) encoder period </td></tr>
+    <tr><td class="paramname">divisor</td><td>(int32_t) encoder divisor </td></tr>
+    <tr><td class="paramname">checkUniqueness</td><td>If true, it checks if a message with the same ID already exists in the sent messages, default false </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">(bool)</td><td>true if data was queued successfully, false otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9cb59b051dd544f10088ad1bf9e1226e" name="a9cb59b051dd544f10088ad1bf9e1226e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cb59b051dd544f10088ad1bf9e1226e">&#9670;&#160;</a></span>sendValue_xrp_gyro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool XSWC::sendValue_xrp_gyro </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>xRate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>yRate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>zRate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>roll</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>pitch</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>yaw</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkUniqueness</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends gyroscope values. </p>
+<dl class="section note"><dt>Note</dt><dd>XRP gyroscope data doesn't have an ID, so only one gyroscope can be transmitted </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xRate</td><td>(float) gyro rate around X/roll axis </td></tr>
+    <tr><td class="paramname">yRate</td><td>(float) gyro rate around Y/pitch axis </td></tr>
+    <tr><td class="paramname">zRate</td><td>(float) gyro rate around Z/yaw axis </td></tr>
+    <tr><td class="paramname">roll</td><td>(float) angle around X axis </td></tr>
+    <tr><td class="paramname">pitch</td><td>(float) angle around Y axis </td></tr>
+    <tr><td class="paramname">yaw</td><td>(float) angle around Z axis </td></tr>
+    <tr><td class="paramname">checkUniqueness</td><td>If true, it checks if a message with the same ID already exists in the sent messages, default false </td></tr>
   </table>
   </dd>
 </dl>

@@ -166,11 +166,11 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span> (end - pos &lt; 4) {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        buffer[pos] = 3; <span class="comment">// size excluding itself</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        buffer[pos] = 3; <span class="comment">// size excluding size byte itself</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        buffer[pos + 1] = XRP_TAG_DIO;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        buffer[pos + 2] = <a class="code hl_variable" href="class_xrp_dio.html#a07d1ec5ec6abd08b38bc2e0f0f3c3d95">data</a>.<a class="code hl_variable" href="structxrp__dio__t.html#a8fb849e2cd9eb37074ade161a1501e86">id</a>;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        buffer[pos + 3] = (<a class="code hl_variable" href="class_xrp_dio.html#a07d1ec5ec6abd08b38bc2e0f0f3c3d95">data</a>.<a class="code hl_variable" href="structxrp__dio__t.html#a65454ceaa334268c4e570f53d25641ba">value</a> == 1);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span> 4;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span> 4; <span class="comment">// 1 for tag, 1 for id, 1 for value</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
 </div>
 <div class="foldopen" id="foldopen00062" data-start="{" data-end="}">

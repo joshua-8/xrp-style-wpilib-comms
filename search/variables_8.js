@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['value_0',['value',['../structtag__type.html#a2deeebd56db407f3d5e94d76d8dd8895',1,'tag_type::value'],['../structxrp__analog__t.html#a8baa1c59f06c6ff802c991faad384cc9',1,'xrp_analog_t::value'],['../structtag__type_3_01xrp__analog__t_01_4.html#a5f3f24118479a0dbfe6618e767f98e95',1,'tag_type&lt; xrp_analog_t &gt;::value'],['../structxrp__dio__t.html#a65454ceaa334268c4e570f53d25641ba',1,'xrp_dio_t::value'],['../structtag__type_3_01xrp__dio__t_01_4.html#a9cb21c838ca52bb17d1a48d800ed6ae0',1,'tag_type&lt; xrp_dio_t &gt;::value'],['../structxrp__motor__t.html#a33f7ae6cd6b30f70f9470b10e1eb4b2c',1,'xrp_motor_t::value'],['../structtag__type_3_01xrp__motor__t_01_4.html#a0f2304ed1d9f9982dde79f6ffded196c',1,'tag_type&lt; xrp_motor_t &gt;::value'],['../structxrp__servo__t.html#ae5e254d26586df8e320d3dcf7e17d2de',1,'xrp_servo_t::value'],['../structtag__type_3_01xrp__servo__t_01_4.html#ae047a3bb1a999685295842b10f9b7b14',1,'tag_type&lt; xrp_servo_t &gt;::value']]]
+  ['timeout_5fms_0',['TIMEOUT_MS',['../class_x_s_w_c.html#a829348d4da5d0cae7428786a75850442',1,'XSWC']]],
+  ['txbuf_1',['txBuf',['../class_x_s_w_c.html#a0c478461b8fbf0b256c2b07ea3a3e90b',1,'XSWC']]],
+  ['txseq_2',['txSeq',['../class_x_s_w_c.html#ac081d87e386394dd574d3cd2e0fbb16e',1,'XSWC']]]
 ];

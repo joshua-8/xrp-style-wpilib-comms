@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['timeout_5fms_0',['TIMEOUT_MS',['../class_x_s_w_c.html#a829348d4da5d0cae7428786a75850442',1,'XSWC']]],
-  ['txbuf_1',['txBuf',['../class_x_s_w_c.html#a0c478461b8fbf0b256c2b07ea3a3e90b',1,'XSWC']]],
-  ['txseq_2',['txSeq',['../class_x_s_w_c.html#ac081d87e386394dd574d3cd2e0fbb16e',1,'XSWC']]]
+  ['rates_0',['rates',['../structxrp__gyro__t.html#a4980917463c18be04d1c4fcbde438554',1,'xrp_gyro_t']]],
+  ['receivecallback_1',['receiveCallback',['../class_x_s_w_c.html#a377de969795a32f7563429f37704285b',1,'XSWC']]],
+  ['receivedmessages_2',['receivedMessages',['../class_x_s_w_c.html#ad3c1987108c5808e59ee376ed0874245',1,'XSWC']]],
+  ['roll_3',['roll',['../structxrp__gyro__t.html#ad4ac59590ccf2347b85a21bbb1a9a9a4',1,'xrp_gyro_t']]],
+  ['rxbuf_4',['rxBuf',['../class_x_s_w_c.html#aa4b3f0dbee3eb3d64674071a6a51e424',1,'XSWC']]]
 ];
