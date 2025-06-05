@@ -10,6 +10,7 @@ typedef struct {
 template <>
 struct tag_type<xrp_dio_t> {
     static constexpr uint8_t value = XRP_TAG_DIO;
+    static constexpr bool hasId = true;
 };
 
 #include "byteutils.h"
@@ -70,7 +71,7 @@ public:
         return 3; // 1 byte for tag, 1 byte for id, 1 byte for value
     }
 
-    // default destructor is fine 
+    // default destructor is fine
 
 protected:
     xrp_dio_t data;

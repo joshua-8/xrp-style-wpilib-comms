@@ -42,6 +42,14 @@ xrp_analog_t battery_data = { .id = 0, .value = 0.0 };
 
 xrp_dio_t button_data = { .id = 0, .value = 0 };
 
+xrp_accel_t accel_data = { .accels = { 0.0, 0.0, 0.0 } };
+xrp_gyro_t gyro_data = { .rates = { 0.0, 0.0, 0.0 }, .angles = { 0.0, 0.0, 0.0 } };
+
+xrp_encoder_t encoder2_L_data;
+xrp_encoder_t encoder7_R_data;
+xrp_encoder_t encoder3_3_data;
+xrp_encoder_t encoder4_4_data;
+
 void setup()
 {
     Serial.begin(115200);
@@ -70,8 +78,16 @@ void processDataReceived()
 
     Serial.printf("motor2_L: %.2f, motor3_3: %.2f, motor4_4: %.2f, motor7_R: %.2f   ",
         motor2_L_data.value, motor3_3_data.value, motor4_4_data.value, motor7_R_data.value);
-    Serial.printf("servo1: %.2f, servo2: %.2f\n",
+    Serial.printf("servo1: %.2f, servo2: %.2f     ",
         servo1_data.value, servo2_data.value);
+    Serial.printf("accel: (%.2f, %.2f, %.2f)   ",
+        accel_data.accels[0], accel_data.accels[1], accel_data.accels[2]);
+    Serial.printf("gyro: (%.2f, %.2f, %.2f)   ",
+        gyro_data.rates[0], gyro_data.rates[1], gyro_data.rates[2]);
+    Serial.printf("rot: (%.2f, %.2f, %.2f)   ",
+        gyro_data.angles[0], gyro_data.angles[1], gyro_data.angles[2]);
+    Serial.printf("encoder2_L: %d, encoder7_R: %d, encoder3_3: %d, encoder4_4: %d\n",
+        encoder2_L_data.count, encoder7_R_data.count, encoder3_3_data.count, encoder4_4_data.count);
 }
 
 void collectDataToSend()
@@ -81,6 +97,43 @@ void collectDataToSend()
 
     button_data.value = digitalRead(0);
     xswc.sendData_xrp_dio(button_data);
+
+    accel_data.x = NoU3.acceleration_x;
+    accel_data.y = NoU3.acceleration_y;
+    accel_data.z = NoU3.acceleration_z;
+    xswc.sendData_xrp_accel(accel_data);
+
+    gyro_data.x = NoU3.gyroscope_x;
+    gyro_data.y = NoU3.gyroscope_y;
+    gyro_data.z = NoU3.gyroscope_z;
+    gyro_data.roll = NoU3.roll;
+    gyro_data.pitch = NoU3.pitch;
+    gyro_data.yaw = NoU3.yaw;
+    xswc.sendData_xrp_gyro(gyro_data);
+
+    encoder2_L_data.id = 0;
+    encoder2_L_data.count = motor2_L.getPosition();
+    encoder2_L_data.period = 0; // TODO: implement
+    encoder2_L_data.divisor = 1; // TODO: implement
+    xswc.sendData_xrp_encoder(encoder2_L_data);
+
+    encoder7_R_data.id = 1;
+    encoder7_R_data.count = motor7_R.getPosition();
+    encoder7_R_data.period = 0; // TODO: implement
+    encoder7_R_data.divisor = 1; // TODO: implement
+    xswc.sendData_xrp_encoder(encoder7_R_data);
+
+    encoder3_3_data.id = 2;
+    encoder3_3_data.count = motor3_3.getPosition();
+    encoder3_3_data.period = 0; // TODO: implement
+    encoder3_3_data.divisor = 1; // TODO: implement
+    xswc.sendData_xrp_encoder(encoder3_3_data);
+
+    encoder4_4_data.id = 3;
+    encoder4_4_data.count = motor4_4.getPosition();
+    encoder4_4_data.period = 0; // TODO: implement
+    encoder4_4_data.divisor = 1; // TODO: implement
+    xswc.sendData_xrp_encoder(encoder4_4_data);
 }
 
 void loop()

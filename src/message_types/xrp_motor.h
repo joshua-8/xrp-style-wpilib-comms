@@ -11,6 +11,7 @@ typedef struct {
 template <>
 struct tag_type<xrp_motor_t> {
     static constexpr uint8_t value = XRP_TAG_MOTOR;
+    static constexpr bool hasId = true;
 };
 
 #include "byteutils.h"

@@ -10,6 +10,7 @@ typedef struct {
 template <>
 struct tag_type<xrp_servo_t> {
     static constexpr uint8_t value = XRP_TAG_SERVO;
+    static constexpr bool hasId = true;
 };
 
 #include "byteutils.h"

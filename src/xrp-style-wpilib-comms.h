@@ -372,11 +372,18 @@ protected:
         if (checkUniqueness) {
             // search sent messages for a message with tag and id
             for (MessageType* msg : sentMessages) {
-                if (msg->getTag() == TYPE_TO_TAG_VAL(T) && (msg->hasId() == false || msg->getId() == data.id)) {
-                    // Found a message of the correct type and with the correct ID
-                    // we'll overwrite it
-                    message = msg;
-                    break;
+                if (msg->getTag() == TYPE_TO_TAG_VAL(T)) {
+                    if constexpr (HAS_ID(T) == false) {
+                        // Found a message of the correct type (and no ID is needed for this type)
+                        message = msg; // overwrite it
+                        break;
+                    } else {
+                        if (msg->getId() == data.id) {
+                            // Found a message of the correct type and with the correct ID
+                            message = msg; // overwrite it
+                            break;
+                        }
+                    }
                 }
             }
         }
@@ -392,7 +399,8 @@ protected:
         return false;
     }
 
-    boolean processReceivedBufferIntoMessages(char* buffer, int length);
+    boolean
+    processReceivedBufferIntoMessages(char* buffer, int length);
     int processMessagesIntoBufferToSend(char* buffer, int length);
 
     WiFiUDP udp; // UDP instance for communication
@@ -416,7 +424,6 @@ protected:
 
     void (*sendCallback)(void);
     void (*receiveCallback)(void);
-
 }; // end class XSWC
 
 extern XSWC xswc; // a global instance is created in the .cpp file

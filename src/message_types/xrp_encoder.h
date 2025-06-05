@@ -12,6 +12,7 @@ typedef struct {
 template <>
 struct tag_type<xrp_encoder_t> {
     static constexpr uint8_t value = XRP_TAG_ENCODER;
+    static constexpr bool hasId = true;
 };
 
 #include "byteutils.h"

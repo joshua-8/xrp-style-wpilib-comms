@@ -24,6 +24,7 @@ typedef struct {
 template <>
 struct tag_type<xrp_gyro_t> {
     static constexpr uint8_t value = XRP_TAG_GYRO;
+    static constexpr bool hasId = false;
 };
 
 #include "byteutils.h"
