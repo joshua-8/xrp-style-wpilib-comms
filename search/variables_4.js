@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['milliswhenlastmessagereceived_0',['millisWhenLastMessageReceived',['../class_x_s_w_c.html#a5231f5ee32fe838c57a9a1cb44e456cc',1,'XSWC']]],
-  ['milliswhenlastsent_1',['millisWhenLastSent',['../class_x_s_w_c.html#a6a9659f7d640e2ada41a91189148822d',1,'XSWC']]],
-  ['min_5fupdate_5ftime_5fms_2',['MIN_UPDATE_TIME_MS',['../class_x_s_w_c.html#a8e0131fe33aed93e685e6c072e136714',1,'XSWC']]]
+  ['id_0',['id',['../structxrp__analog__t.html#ae9f234eb483ece20bdb0778dd0c5429f',1,'xrp_analog_t::id'],['../structxrp__dio__t.html#a8fb849e2cd9eb37074ade161a1501e86',1,'xrp_dio_t::id'],['../structxrp__encoder__t.html#a8dff1fa52c8cd7675f4d26e153d71168',1,'xrp_encoder_t::id'],['../structxrp__motor__t.html#a1ce495b6152acdddbbe03f8a716d1f22',1,'xrp_motor_t::id'],['../structxrp__servo__t.html#a2eb2cf692b43bdf1f2961ec97e5a750b',1,'xrp_servo_t::id']]]
 ];

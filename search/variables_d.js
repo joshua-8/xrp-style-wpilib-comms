@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['z_0',['z',['../structxrp__accel__t.html#a9607f3de3afeae45e9d24ecebde8ee31',1,'xrp_accel_t::z'],['../structxrp__gyro__t.html#a3ed0fcb7d8b6aceb3fdbfdd6c7156968',1,'xrp_gyro_t::z']]]
+  ['y_0',['y',['../structxrp__accel__t.html#a2f4d3ba3c94d82d6a2cf89eab091507d',1,'xrp_accel_t::y'],['../structxrp__gyro__t.html#ad24dace05bef6541bcd31429b34a4016',1,'xrp_gyro_t::y']]],
+  ['yaw_1',['yaw',['../structxrp__gyro__t.html#a65b5bf910c23c98a508672680e3f2c0f',1,'xrp_gyro_t']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['period_0',['period',['../structxrp__encoder__t.html#abd5685f8601cc364209651d9250cfe02',1,'xrp_encoder_t']]],
-  ['pitch_1',['pitch',['../structxrp__gyro__t.html#a87c12ed1ea60515882b78dd1be7e4b86',1,'xrp_gyro_t']]]
+  ['milliswhenlastmessagereceived_0',['millisWhenLastMessageReceived',['../class_x_s_w_c.html#a5231f5ee32fe838c57a9a1cb44e456cc',1,'XSWC']]],
+  ['milliswhenlastsent_1',['millisWhenLastSent',['../class_x_s_w_c.html#a6a9659f7d640e2ada41a91189148822d',1,'XSWC']]],
+  ['min_5fupdate_5ftime_5fms_2',['MIN_UPDATE_TIME_MS',['../class_x_s_w_c.html#a8e0131fe33aed93e685e6c072e136714',1,'XSWC']]]
 ];

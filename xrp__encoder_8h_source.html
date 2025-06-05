@@ -108,116 +108,117 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structtag__type_3_01xrp__encoder__t_01_4.html">   13</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtag__type.html">tag_type</a>&lt;<a class="code hl_struct" href="structxrp__encoder__t.html">xrp_encoder_t</a>&gt; {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structtag__type_3_01xrp__encoder__t_01_4.html#a5703ca437fb7cebb217d4bc79d75239e">   14</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> uint8_t <a class="code hl_variable" href="structtag__type.html#a2deeebd56db407f3d5e94d76d8dd8895">value</a> = XRP_TAG_ENCODER;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structtag__type_3_01xrp__encoder__t_01_4.html#a42f6416fe428ddbac383456dcc321ba0">   15</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> hasId = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
 </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="byteutils_8h.html">byteutils.h</a>&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="class_x_r_p_encoder.html">XRPEncoder</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_message_type.html">MessageType</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#ac347ddc326ceb6d4b0896e798d8493ab">   21</a></span>    <a class="code hl_function" href="class_x_r_p_encoder.html#ac347ddc326ceb6d4b0896e798d8493ab">XRPEncoder</a>()</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        : <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>({ 0, 0, 0, 1 }) <span class="comment">// Initialize with default values</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="byteutils_8h.html">byteutils.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="class_x_r_p_encoder.html">XRPEncoder</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_message_type.html">MessageType</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#ac347ddc326ceb6d4b0896e798d8493ab">   22</a></span>    <a class="code hl_function" href="class_x_r_p_encoder.html#ac347ddc326ceb6d4b0896e798d8493ab">XRPEncoder</a>()</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        : <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>({ 0, 0, 0, 1 }) <span class="comment">// Initialize with default values</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#ad391608a92e092d97342c8446e89aca3">   26</a></span>    <a class="code hl_function" href="class_x_r_p_encoder.html#ad391608a92e092d97342c8446e89aca3">XRPEncoder</a>(uint8_t <span class="keywordtype">id</span>, int32_t count, int32_t period, int32_t divisor)</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        : <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>({ id, count, period, divisor })</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#ad391608a92e092d97342c8446e89aca3">   27</a></span>    <a class="code hl_function" href="class_x_r_p_encoder.html#ad391608a92e092d97342c8446e89aca3">XRPEncoder</a>(uint8_t <span class="keywordtype">id</span>, int32_t count, int32_t period, int32_t divisor)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        : <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>({ id, count, period, divisor })</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a52f3184929be42f8b5a1bb34a44b10cf">   31</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_x_r_p_encoder.html#a52f3184929be42f8b5a1bb34a44b10cf">getTag</a>()<span class="keyword"> override</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">return</span> XRP_TAG_ENCODER;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a52f3184929be42f8b5a1bb34a44b10cf">   32</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_x_r_p_encoder.html#a52f3184929be42f8b5a1bb34a44b10cf">getTag</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> XRP_TAG_ENCODER;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a22a896ac1cdc24be2647b7d2675daf07">   36</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_x_r_p_encoder.html#a22a896ac1cdc24be2647b7d2675daf07">hasId</a>()<span class="keyword"> override</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a22a896ac1cdc24be2647b7d2675daf07">   37</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_x_r_p_encoder.html#a22a896ac1cdc24be2647b7d2675daf07">hasId</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#adfe0d4b7494dd4e436e27139b1925f20">   41</a></span>    uint8_t <a class="code hl_function" href="class_x_r_p_encoder.html#adfe0d4b7494dd4e436e27139b1925f20">getId</a>()<span class="keyword"> override</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>.<a class="code hl_variable" href="structxrp__encoder__t.html#a8dff1fa52c8cd7675f4d26e153d71168">id</a>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#adfe0d4b7494dd4e436e27139b1925f20">   42</a></span>    uint8_t <a class="code hl_function" href="class_x_r_p_encoder.html#adfe0d4b7494dd4e436e27139b1925f20">getId</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>.<a class="code hl_variable" href="structxrp__encoder__t.html#a8dff1fa52c8cd7675f4d26e153d71168">id</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a472872a5da7f52e621517613bbede93c">   46</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_x_r_p_encoder.html#a472872a5da7f52e621517613bbede93c">setData</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* dataPtr)<span class="keyword"> override</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">if</span> (dataPtr != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a> = *<span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code hl_struct" href="structxrp__encoder__t.html">xrp_encoder_t</a>*<span class="keyword">&gt;</span>(dataPtr);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a472872a5da7f52e621517613bbede93c">   47</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_x_r_p_encoder.html#a472872a5da7f52e621517613bbede93c">setData</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* dataPtr)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> (dataPtr != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a> = *<span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code hl_struct" href="structxrp__encoder__t.html">xrp_encoder_t</a>*<span class="keyword">&gt;</span>(dataPtr);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a4f99af377983c938f83e8f4a855a7200">   53</a></span>    <span class="keywordtype">void</span>* <a class="code hl_function" href="class_x_r_p_encoder.html#a4f99af377983c938f83e8f4a855a7200">getData</a>()<span class="keyword"> override</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span> &amp;<a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a4f99af377983c938f83e8f4a855a7200">   54</a></span>    <span class="keywordtype">void</span>* <a class="code hl_function" href="class_x_r_p_encoder.html#a4f99af377983c938f83e8f4a855a7200">getData</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> &amp;<a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a423c2ae6ea0dc5752486fcc14e41f93b">   58</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_x_r_p_encoder.html#a423c2ae6ea0dc5752486fcc14e41f93b">toNetworkBuffer</a>(<span class="keywordtype">char</span>* buffer, <span class="keywordtype">int</span> pos, <span class="keywordtype">int</span> end)<span class="keyword"> override</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span> (end - pos &lt; 15) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        buffer[pos] = 14; <span class="comment">// size excluding size byte itself</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        buffer[pos + 1] = XRP_TAG_ENCODER;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        buffer[pos + 2] = <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>.<a class="code hl_variable" href="structxrp__encoder__t.html#a8dff1fa52c8cd7675f4d26e153d71168">id</a>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <a class="code hl_function" href="byteutils_8cpp.html#afe40cb2f861d97f0a6abc077826b49b4">int32ToNetwork</a>(<a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>.<a class="code hl_variable" href="structxrp__encoder__t.html#a51ac50e995a3a52624e4fbd48cc63ce2">count</a>, buffer, pos + 3);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_function" href="byteutils_8cpp.html#afe40cb2f861d97f0a6abc077826b49b4">int32ToNetwork</a>(<a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>.<a class="code hl_variable" href="structxrp__encoder__t.html#abd5685f8601cc364209651d9250cfe02">period</a>, buffer, pos + 7);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <a class="code hl_function" href="byteutils_8cpp.html#afe40cb2f861d97f0a6abc077826b49b4">int32ToNetwork</a>(<a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>.<a class="code hl_variable" href="structxrp__encoder__t.html#acaef7ce51753a3a9521182f692758dfb">divisor</a>, buffer, pos + 11);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">return</span> 15; <span class="comment">// 1 for size, 1 for tag, 1 for id, 4 for count, 4 for period, 4 for divisor</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a423c2ae6ea0dc5752486fcc14e41f93b">   59</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_x_r_p_encoder.html#a423c2ae6ea0dc5752486fcc14e41f93b">toNetworkBuffer</a>(<span class="keywordtype">char</span>* buffer, <span class="keywordtype">int</span> pos, <span class="keywordtype">int</span> end)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (end - pos &lt; 15) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        buffer[pos] = 14; <span class="comment">// size excluding size byte itself</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        buffer[pos + 1] = XRP_TAG_ENCODER;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        buffer[pos + 2] = <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>.<a class="code hl_variable" href="structxrp__encoder__t.html#a8dff1fa52c8cd7675f4d26e153d71168">id</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_function" href="byteutils_8cpp.html#afe40cb2f861d97f0a6abc077826b49b4">int32ToNetwork</a>(<a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>.<a class="code hl_variable" href="structxrp__encoder__t.html#a51ac50e995a3a52624e4fbd48cc63ce2">count</a>, buffer, pos + 3);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <a class="code hl_function" href="byteutils_8cpp.html#afe40cb2f861d97f0a6abc077826b49b4">int32ToNetwork</a>(<a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>.<a class="code hl_variable" href="structxrp__encoder__t.html#abd5685f8601cc364209651d9250cfe02">period</a>, buffer, pos + 7);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_function" href="byteutils_8cpp.html#afe40cb2f861d97f0a6abc077826b49b4">int32ToNetwork</a>(<a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>.<a class="code hl_variable" href="structxrp__encoder__t.html#acaef7ce51753a3a9521182f692758dfb">divisor</a>, buffer, pos + 11);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">return</span> 15; <span class="comment">// 1 for size, 1 for tag, 1 for id, 4 for count, 4 for period, 4 for divisor</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 </div>
-<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a8760c571d1e288828ed1f1bb327c9a49">   71</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_x_r_p_encoder.html#a8760c571d1e288828ed1f1bb327c9a49">fromNetworkBuffer</a>(<span class="keywordtype">char</span>* buf, <span class="keywordtype">int</span> pos, <span class="keywordtype">int</span> end)<span class="keyword"> override</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="comment">// it doesn&#39;t make sense to receive an encoder reading from the computer</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="comment">//     if (end - pos &lt; 14) {</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="comment">//         return 0;</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="comment">//     }</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="comment">//     // buf[pos] is the tag, which should have already been confirmed to be XRP_TAG_ENCODER</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="comment">//     data.id = (uint8_t)buf[pos + 1];</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="comment">//     data.count = networkToInt32(buf, pos + 2);</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="comment">//     data.period = networkToInt32(buf, pos + 6);</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="comment">//     data.divisor = networkToInt32(buf, pos + 10);</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="comment">//     return 14; // size of the message</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a8760c571d1e288828ed1f1bb327c9a49">   72</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_x_r_p_encoder.html#a8760c571d1e288828ed1f1bb327c9a49">fromNetworkBuffer</a>(<span class="keywordtype">char</span>* buf, <span class="keywordtype">int</span> pos, <span class="keywordtype">int</span> end)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="comment">// it doesn&#39;t make sense to receive an encoder reading from the computer</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="comment">//     if (end - pos &lt; 14) {</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="comment">//         return 0;</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="comment">//     }</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="comment">//     // buf[pos] is the tag, which should have already been confirmed to be XRP_TAG_ENCODER</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="comment">//     data.id = (uint8_t)buf[pos + 1];</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="comment">//     data.count = networkToInt32(buf, pos + 2);</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="comment">//     data.period = networkToInt32(buf, pos + 6);</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="comment">//     data.divisor = networkToInt32(buf, pos + 10);</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="comment">//     return 14; // size of the message</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
 </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">// default destructor is fine</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">   88</a></span>    <a class="code hl_struct" href="structxrp__encoder__t.html">xrp_encoder_t</a> <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="comment">// default destructor is fine</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">   89</a></span>    <a class="code hl_struct" href="structxrp__encoder__t.html">xrp_encoder_t</a> <a class="code hl_variable" href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">data</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>};</div>
 </div>
 <div class="ttc" id="abyteutils_8cpp_html_afe40cb2f861d97f0a6abc077826b49b4"><div class="ttname"><a href="byteutils_8cpp.html#afe40cb2f861d97f0a6abc077826b49b4">int32ToNetwork</a></div><div class="ttdeci">void int32ToNetwork(int32_t num, char *buf, int offset)</div><div class="ttdef"><b>Definition</b> byteutils.cpp:70</div></div>
 <div class="ttc" id="abyteutils_8h_html"><div class="ttname"><a href="byteutils_8h.html">byteutils.h</a></div></div>
 <div class="ttc" id="aclass_message_type_html"><div class="ttname"><a href="class_message_type.html">MessageType</a></div><div class="ttdef"><b>Definition</b> message_type.h:3</div></div>
-<div class="ttc" id="aclass_x_r_p_encoder_html"><div class="ttname"><a href="class_x_r_p_encoder.html">XRPEncoder</a></div><div class="ttdef"><b>Definition</b> xrp_encoder.h:19</div></div>
-<div class="ttc" id="aclass_x_r_p_encoder_html_a22a896ac1cdc24be2647b7d2675daf07"><div class="ttname"><a href="class_x_r_p_encoder.html#a22a896ac1cdc24be2647b7d2675daf07">XRPEncoder::hasId</a></div><div class="ttdeci">bool hasId() override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:36</div></div>
-<div class="ttc" id="aclass_x_r_p_encoder_html_a423c2ae6ea0dc5752486fcc14e41f93b"><div class="ttname"><a href="class_x_r_p_encoder.html#a423c2ae6ea0dc5752486fcc14e41f93b">XRPEncoder::toNetworkBuffer</a></div><div class="ttdeci">int toNetworkBuffer(char *buffer, int pos, int end) override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:58</div></div>
-<div class="ttc" id="aclass_x_r_p_encoder_html_a472872a5da7f52e621517613bbede93c"><div class="ttname"><a href="class_x_r_p_encoder.html#a472872a5da7f52e621517613bbede93c">XRPEncoder::setData</a></div><div class="ttdeci">void setData(const void *dataPtr) override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:46</div></div>
-<div class="ttc" id="aclass_x_r_p_encoder_html_a4f99af377983c938f83e8f4a855a7200"><div class="ttname"><a href="class_x_r_p_encoder.html#a4f99af377983c938f83e8f4a855a7200">XRPEncoder::getData</a></div><div class="ttdeci">void * getData() override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:53</div></div>
-<div class="ttc" id="aclass_x_r_p_encoder_html_a52f3184929be42f8b5a1bb34a44b10cf"><div class="ttname"><a href="class_x_r_p_encoder.html#a52f3184929be42f8b5a1bb34a44b10cf">XRPEncoder::getTag</a></div><div class="ttdeci">int getTag() override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:31</div></div>
-<div class="ttc" id="aclass_x_r_p_encoder_html_a70900838d1d35427bf7154831b1ed358"><div class="ttname"><a href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">XRPEncoder::data</a></div><div class="ttdeci">xrp_encoder_t data</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:88</div></div>
-<div class="ttc" id="aclass_x_r_p_encoder_html_a8760c571d1e288828ed1f1bb327c9a49"><div class="ttname"><a href="class_x_r_p_encoder.html#a8760c571d1e288828ed1f1bb327c9a49">XRPEncoder::fromNetworkBuffer</a></div><div class="ttdeci">int fromNetworkBuffer(char *buf, int pos, int end) override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:71</div></div>
-<div class="ttc" id="aclass_x_r_p_encoder_html_ac347ddc326ceb6d4b0896e798d8493ab"><div class="ttname"><a href="class_x_r_p_encoder.html#ac347ddc326ceb6d4b0896e798d8493ab">XRPEncoder::XRPEncoder</a></div><div class="ttdeci">XRPEncoder()</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:21</div></div>
-<div class="ttc" id="aclass_x_r_p_encoder_html_ad391608a92e092d97342c8446e89aca3"><div class="ttname"><a href="class_x_r_p_encoder.html#ad391608a92e092d97342c8446e89aca3">XRPEncoder::XRPEncoder</a></div><div class="ttdeci">XRPEncoder(uint8_t id, int32_t count, int32_t period, int32_t divisor)</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:26</div></div>
-<div class="ttc" id="aclass_x_r_p_encoder_html_adfe0d4b7494dd4e436e27139b1925f20"><div class="ttname"><a href="class_x_r_p_encoder.html#adfe0d4b7494dd4e436e27139b1925f20">XRPEncoder::getId</a></div><div class="ttdeci">uint8_t getId() override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:41</div></div>
+<div class="ttc" id="aclass_x_r_p_encoder_html"><div class="ttname"><a href="class_x_r_p_encoder.html">XRPEncoder</a></div><div class="ttdef"><b>Definition</b> xrp_encoder.h:20</div></div>
+<div class="ttc" id="aclass_x_r_p_encoder_html_a22a896ac1cdc24be2647b7d2675daf07"><div class="ttname"><a href="class_x_r_p_encoder.html#a22a896ac1cdc24be2647b7d2675daf07">XRPEncoder::hasId</a></div><div class="ttdeci">bool hasId() override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:37</div></div>
+<div class="ttc" id="aclass_x_r_p_encoder_html_a423c2ae6ea0dc5752486fcc14e41f93b"><div class="ttname"><a href="class_x_r_p_encoder.html#a423c2ae6ea0dc5752486fcc14e41f93b">XRPEncoder::toNetworkBuffer</a></div><div class="ttdeci">int toNetworkBuffer(char *buffer, int pos, int end) override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:59</div></div>
+<div class="ttc" id="aclass_x_r_p_encoder_html_a472872a5da7f52e621517613bbede93c"><div class="ttname"><a href="class_x_r_p_encoder.html#a472872a5da7f52e621517613bbede93c">XRPEncoder::setData</a></div><div class="ttdeci">void setData(const void *dataPtr) override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:47</div></div>
+<div class="ttc" id="aclass_x_r_p_encoder_html_a4f99af377983c938f83e8f4a855a7200"><div class="ttname"><a href="class_x_r_p_encoder.html#a4f99af377983c938f83e8f4a855a7200">XRPEncoder::getData</a></div><div class="ttdeci">void * getData() override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:54</div></div>
+<div class="ttc" id="aclass_x_r_p_encoder_html_a52f3184929be42f8b5a1bb34a44b10cf"><div class="ttname"><a href="class_x_r_p_encoder.html#a52f3184929be42f8b5a1bb34a44b10cf">XRPEncoder::getTag</a></div><div class="ttdeci">int getTag() override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:32</div></div>
+<div class="ttc" id="aclass_x_r_p_encoder_html_a70900838d1d35427bf7154831b1ed358"><div class="ttname"><a href="class_x_r_p_encoder.html#a70900838d1d35427bf7154831b1ed358">XRPEncoder::data</a></div><div class="ttdeci">xrp_encoder_t data</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:89</div></div>
+<div class="ttc" id="aclass_x_r_p_encoder_html_a8760c571d1e288828ed1f1bb327c9a49"><div class="ttname"><a href="class_x_r_p_encoder.html#a8760c571d1e288828ed1f1bb327c9a49">XRPEncoder::fromNetworkBuffer</a></div><div class="ttdeci">int fromNetworkBuffer(char *buf, int pos, int end) override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:72</div></div>
+<div class="ttc" id="aclass_x_r_p_encoder_html_ac347ddc326ceb6d4b0896e798d8493ab"><div class="ttname"><a href="class_x_r_p_encoder.html#ac347ddc326ceb6d4b0896e798d8493ab">XRPEncoder::XRPEncoder</a></div><div class="ttdeci">XRPEncoder()</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:22</div></div>
+<div class="ttc" id="aclass_x_r_p_encoder_html_ad391608a92e092d97342c8446e89aca3"><div class="ttname"><a href="class_x_r_p_encoder.html#ad391608a92e092d97342c8446e89aca3">XRPEncoder::XRPEncoder</a></div><div class="ttdeci">XRPEncoder(uint8_t id, int32_t count, int32_t period, int32_t divisor)</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:27</div></div>
+<div class="ttc" id="aclass_x_r_p_encoder_html_adfe0d4b7494dd4e436e27139b1925f20"><div class="ttname"><a href="class_x_r_p_encoder.html#adfe0d4b7494dd4e436e27139b1925f20">XRPEncoder::getId</a></div><div class="ttdeci">uint8_t getId() override</div><div class="ttdef"><b>Definition</b> xrp_encoder.h:42</div></div>
 <div class="ttc" id="amessage__type_8h_html"><div class="ttname"><a href="message__type_8h.html">message_type.h</a></div></div>
 <div class="ttc" id="astructtag__type_html"><div class="ttname"><a href="structtag__type.html">tag_type</a></div><div class="ttdef"><b>Definition</b> message_type.h:18</div></div>
 <div class="ttc" id="astructtag__type_html_a2deeebd56db407f3d5e94d76d8dd8895"><div class="ttname"><a href="structtag__type.html#a2deeebd56db407f3d5e94d76d8dd8895">tag_type::value</a></div><div class="ttdeci">static constexpr uint8_t value</div><div class="ttdef"><b>Definition</b> message_type.h:19</div></div>
