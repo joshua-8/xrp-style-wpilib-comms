@@ -21,7 +21,6 @@ boolean XSWC::processReceivedBufferIntoMessages(char* buffer, int length)
     int index = 0;
     int sequence = networkToUInt16(buffer, 0); // TODO: USE sequence to toss out of order data
     cmdEnable = ((uint8_t)buffer[2] == 1);
-    // TODO: WHAT'S ACTUALLY HAPPENING WITH (uint8_t) VS (CHAR)
     index += 3;
     while (index + 1 < length) { // min size of a block is 2
         // process "data blocks" each block is a message
@@ -104,7 +103,7 @@ bool XSWC::begin(const char* ssid, const char* password, void (*_receiveCallback
     if (useAP) {
         WiFi.disconnect();
         WiFi.mode(WIFI_AP);
-        // TODO: make customizable
+        // TODO: make ap name and password customizable
         Serial.println("[NET] creating AP with ssid: XRP_XSWC_AP and password: password");
         WiFi.softAP("XRP_XSWC_AP", "password");
         while (WiFi.softAPIP() == IPAddress(0, 0, 0, 0)) {
@@ -143,6 +142,8 @@ bool XSWC::update()
         millisWhenLastMessageReceived = millis();
         int receivedPacketSize = udp.read(rxBuf, UDP_PACKET_MAX_SIZE_XRP);
 
+        // TODO: putting data into a list of MessageTypes just to then put it into the network buffer is inefficient compared to directly filling the buffer
+
         // clear list or received messages before parsing the packet into messages
         for (MessageType* msg : receivedMessages) {
             delete msg;
@@ -159,7 +160,7 @@ bool XSWC::update()
         int txSize = processMessagesIntoBufferToSend(txBuf, UDP_PACKET_MAX_SIZE_XRP);
         if (connectedToRemote) {
             udp.beginPacket(); // udpRemoteAddr.toString().c_str(), udpRemotePort);
-            udp.write((uint8_t*)txBuf, txSize); // TODO: WHAT TYPE? byte or char?
+            udp.write((uint8_t*)txBuf, txSize);
             udp.endPacket();
             txSeq++;
         }
