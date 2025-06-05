@@ -50,14 +50,14 @@ public:
     }
     int toNetworkBuffer(char* buffer, int pos, int end) override
     {
-        if (end - pos < 6) {
+        if (end - pos < 7) {
             return 0;
         }
-        buffer[pos] = 5; // size excluding itself
+        buffer[pos] = 6; // size excluding size byte itself
         buffer[pos + 1] = XRP_TAG_ANALOG;
         buffer[pos + 2] = data.id;
         floatToNetwork(data.value, buffer, pos + 3);
-        return 6; // 1 byte for size, 1 for tag, 1 for id, 4 for value
+        return 7; // 1 for size, 1 for tag, 1 for id, 4 for value
     }
     int fromNetworkBuffer(char* buf, int pos, int end) override
     {

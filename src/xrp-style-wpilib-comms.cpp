@@ -23,13 +23,13 @@ boolean XSWC::processReceivedBufferIntoMessages(char* buffer, int length)
     cmdEnable = ((uint8_t)buffer[2] == 1);
     // TODO: WHAT'S ACTUALLY HAPPENING WITH (uint8_t) VS (CHAR)
     index += 3;
-    while (index + 2 < length) { // min size of a block is 2
+    while (index + 1 < length) { // min size of a block is 2
         // process "data blocks" each block is a message
         int size = (uint8_t)buffer[index] + 1; // size value excludes the size byte
         if (size <= 1) {
             return false; // invalid
         }
-        index++;
+        index++; // size
         uint8_t tag = (uint8_t)buffer[index];
         MessageType* msg = MessageTypeFactory::createMessageType(tag);
         if (msg != nullptr) {
@@ -41,6 +41,8 @@ boolean XSWC::processReceivedBufferIntoMessages(char* buffer, int length)
                 delete msg; // clean up
                 return false; // fromNetworkBuffer failed
             }
+        } else {
+            return false; // unknown message type
         }
     }
     return true;

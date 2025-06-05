@@ -53,11 +53,11 @@ public:
         if (end - pos < 4) {
             return 0;
         }
-        buffer[pos] = 3; // size excluding itself
+        buffer[pos] = 3; // size excluding size byte itself
         buffer[pos + 1] = XRP_TAG_DIO;
         buffer[pos + 2] = data.id;
         buffer[pos + 3] = (data.value == 1);
-        return 4;
+        return 4; // 1 for tag, 1 for id, 1 for value
     }
     int fromNetworkBuffer(char* buf, int pos, int end) override
     {

@@ -4,16 +4,19 @@
 #pragma once
 
 // add includes when you add new message types
+#include "message_types/xrp_accel.h"
 #include "message_types/xrp_analog.h"
 #include "message_types/xrp_dio.h"
+#include "message_types/xrp_encoder.h"
+#include "message_types/xrp_gyro.h"
 #include "message_types/xrp_motor.h"
 #include "message_types/xrp_servo.h"
 
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiUdp.h>
-#include <vector>
 #include <cstdint>
+#include <vector>
 
 #include "message_type.h"
 
@@ -33,6 +36,7 @@ protected:
     public:
         static MessageType* createMessageType(uint8_t tag)
         {
+            // add cases when you add new message types
             switch (tag) {
             case XRP_TAG_MOTOR:
                 return new XrpMotor();
@@ -42,7 +46,12 @@ protected:
                 return new XrpDio();
             case XRP_TAG_ANALOG:
                 return new XrpAnalog();
-            // add cases when you add new message types
+            case XRP_TAG_GYRO:
+                return new XrpGyro();
+            case XRP_TAG_ACCEL:
+                return new XrpAccel();
+            case XRP_TAG_ENCODER:
+                return new XRPEncoder();
             default:
                 return nullptr;
             }
@@ -147,8 +156,8 @@ public:
 
     // methods to send data (add methods when you add new message types)
     /**
-     * @brief  Sends data for a specific motor.
-     * @param  data: the xrp_motor_t structure containing the data to send (including ID)
+     * @brief  Sends data for a specific digital input by ID.
+     * @param  data: the xrp_dio_t structure containing the data to send (including ID)
      * @param  checkUniqueness: if true, it checks if a message with the same ID already exists in the sent messages, default false
      * @retval (bool) true if data was queued successfully, false otherwise
      */
@@ -157,14 +166,140 @@ public:
         return sendData<xrp_dio_t>(data, checkUniqueness);
     }
     /**
-     * @brief  Sends data for a specific motor.
-     * @param  data: the xrp_motor_t structure containing the data to send (including ID)
-     * @param  checkUniqueness: if true, it checks if a message with the same ID already exists in the sent messages, default false
+     * @brief  Send a boolean value for a specific digital input/output by ID.
+     * @param  id: the ID of the digital input/output
+     * @param  value: (bool) the boolean value to send (true or false)
+     * @param  checkUniqueness: If true, it checks if a message with the same ID already exists in the sent messages, default false
+     * @retval (bool) true if data was queued successfully, false otherwise
+     */
+    bool sendValue_xrp_dio(const uint8_t id, bool value, bool checkUniqueness = false)
+    {
+        xrp_dio_t data;
+        data.id = id;
+        data.value = value ? 1 : 0; // 1 for true, 0 for false
+        return sendData_xrp_dio(data, checkUniqueness);
+    }
+
+    /**
+     * @brief  Sends data for a specific analog input by ID.
+     * @param  data: the xrp_analog_t structure containing the data to send (including ID)
+     * @param  checkUniqueness: If true, it checks if a message with the same ID already exists in the sent messages, default false
      * @retval (bool) true if data was queued successfully, false otherwise
      */
     bool sendData_xrp_analog(const xrp_analog_t& data, bool checkUniqueness = false)
     {
         return sendData<xrp_analog_t>(data, checkUniqueness);
+    }
+
+    /**
+     * @brief  Sends a float value for a specific analog input by ID.
+     * @param  id: the ID of the analog input
+     * @param  value: (float) the value to send
+     * @param  checkUniqueness: If true, it checks if a message with the same ID already exists in the sent messages, default false
+     * @retval (bool) true if data was queued successfully, false otherwise
+     */
+    bool sendValue_xrp_analog(const uint8_t id, float value, bool checkUniqueness = false)
+    {
+        xrp_analog_t data;
+        data.id = id;
+        data.value = value;
+        return sendData_xrp_analog(data, checkUniqueness);
+    }
+
+    /**
+     * @brief  Sends data for a specific encoder by ID
+     * @param  data: the xrp_encoder_t structure containing the data to send (including ID)
+     * @param  checkUniqueness: If true, it checks if a message with the same ID already exists in the sent messages, default false
+     * @retval (bool) true if data was queued successfully, false otherwise
+     */
+    bool sendData_xrp_encoder(const xrp_encoder_t& data, bool checkUniqueness = false)
+    {
+        return sendData<xrp_encoder_t>(data, checkUniqueness);
+    }
+
+    /**
+     * @brief  Sends values for a specific encoder by ID.
+     * @param  id: the ID of the encoder
+     * @param  count: (int32_t) count of encoder ticks
+     * @param  period: (int32_t) encoder period
+     * @param  divisor: (int32_t) encoder divisor
+     * @param  checkUniqueness: If true, it checks if a message with the same ID already exists in the sent messages, default false
+     * @retval (bool) true if data was queued successfully, false otherwise
+     */
+    bool sendValue_xrp_encoder(const uint8_t id, int32_t count, int32_t period = 0, int32_t divisor = 1, bool checkUniqueness = false)
+    {
+        xrp_encoder_t data;
+        data.id = id;
+        data.count = count;
+        data.period = period;
+        data.divisor = divisor;
+        return sendData_xrp_encoder(data, checkUniqueness);
+    }
+
+    /**
+     * @brief  Sends gyroscope data
+     * @note  XRP gyroscope data doesn't have an ID, so only one gyroscope can be transmitted
+     * @param  data: the xrp_gyro_t structure containing the gyroscope data
+     * @param  checkUniqueness: If true, it checks if a message with the same ID already exists in the sent messages, default false
+     * @retval (bool) true if data was queued successfully, false otherwise
+     */
+    bool sendData_xrp_gyro(const xrp_gyro_t& data, bool checkUniqueness = false)
+    {
+        return sendData<xrp_gyro_t>(data, checkUniqueness);
+    }
+
+    /**
+     * @brief  Sends gyroscope values
+     * @note  XRP gyroscope data doesn't have an ID, so only one gyroscope can be transmitted
+     * @param  xRate: (float) gyro rate around X/roll axis
+     * @param  yRate: (float) gyro rate around Y/pitch axis
+     * @param  zRate: (float) gyro rate around Z/yaw axis
+     * @param  roll: (float) angle around X axis
+     * @param  pitch: (float) angle around Y axis
+     * @param  yaw: (float) angle around Z axis
+     * @param  checkUniqueness: If true, it checks if a message with the same ID already exists in the sent messages, default false
+     * @retval (bool) true if data was queued successfully, false otherwise
+     */
+    bool sendValue_xrp_gyro(float xRate, float yRate, float zRate, float roll, float pitch, float yaw, bool checkUniqueness = false)
+    {
+        xrp_gyro_t data;
+        data.rates[0] = xRate;
+        data.rates[1] = yRate;
+        data.rates[2] = zRate;
+        data.angles[0] = roll;
+        data.angles[1] = pitch;
+        data.angles[2] = yaw;
+        return sendData_xrp_gyro(data, checkUniqueness);
+    }
+
+    /**
+     * @brief  Sends accelerometer data
+     * @note  XRP accelerometer data doesn't have an ID, so only one accelerometer can be transmitted
+     * @param  data: the xrp_accel_t structure containing the accelerometer data
+     * @param  checkUniqueness: If true, it checks if a message with the same ID already exists in the sent messages, default false
+     * @retval (bool) true if data was queued successfully, false otherwise
+     */
+    bool sendData_xrp_accel(const xrp_accel_t& data, bool checkUniqueness = false)
+    {
+        return sendData<xrp_accel_t>(data, checkUniqueness);
+    }
+
+    /**
+     * @brief  Sends accelerometer values
+     * @note  XRP accelerometer data doesn't have an ID, so only one accelerometer can be transmitted
+     * @param  xAccel: (float) acceleration in X/forward direction
+     * @param  yAccel: (float) acceleration in Y/left direction
+     * @param  zAccel: (float) acceleration in Z/up direction
+     * @param  checkUniqueness: If true, it checks if a message with the same ID already exists in the sent messages, default false
+     * @retval (bool) true if data was queued successfully, false otherwise
+     */
+    bool sendValue_xrp_accel(const uint8_t id, float xAccel, float yAccel, float zAccel, bool checkUniqueness = false)
+    {
+        xrp_accel_t data;
+        data.accels[0] = xAccel;
+        data.accels[1] = yAccel;
+        data.accels[2] = zAccel;
+        return sendData_xrp_accel(data, checkUniqueness);
     }
 
     /**
